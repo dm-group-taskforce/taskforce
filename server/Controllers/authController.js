@@ -12,7 +12,7 @@ module.exports = {
     register: async (req, res) => {
         const {username, password, email, first_name, last_name} = req.body;
         const db = req.app.get('db'); 
-        const existingUser = await db.getUser([username]); 
+        const existingUser = await db.authorization.getUser([username]); 
         if(existingUser[0]) {
             return res.status(409).send("Username is taken");
         } else {
@@ -49,6 +49,8 @@ module.exports = {
                 last_name: user.last_name,  
                 mailOptions
             }
+            await db.character.createCharacter(req.session.user.user_id);
+            await db.rank.createRank(req.session.user.user_id);
             res.status(200).json(req.session.user); 
         };    
     },
@@ -77,5 +79,8 @@ module.exports = {
     logout: (req, res) => {
         req.session.destroy();
         return res.status(200).json("You have logged out!")
+    },
+    deleteUser: (req,res) => {
+
     }
 }
