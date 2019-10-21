@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logoBIG from "../../Assets/logoBIG.png";
 
 
-class Nav extends React.Component {
+class Navbar extends React.Component {
 
     constructor() {
         super();
