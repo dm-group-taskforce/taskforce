@@ -8,7 +8,7 @@ export class Profile extends Component {
     constructor(){
         super();
         this.state = {
-            allTasks: [],
+            allTasks: [{type: 'small', content: 'HI'}],
             smallTasks: [],
             mediumTasks: [],
             largeTasks: [],
@@ -19,23 +19,27 @@ export class Profile extends Component {
     componentDidMount(){
         this.props.getRank();
         this.props.getCharacter();
+        const small =  this.state.allTasks.filter((el) => (
+            el.type === 'small'
+        ))
+        const medium =  this.state.allTasks.filter((el) => (
+            el.type === 'medium'
+        ))
+        const large =  this.state.allTasks.filter((el) => (
+            el.type === 'large'
+        ))
+        this.setState({smallTasks: [...small], mediumTasks: [...medium], largeTasks: [...large]})
     }
 
     render() {
-        this.state.allTasks.filter((el) => (
-            if (el.type === 'small'){
-                this.setState({smallTasks: [...this.state.smallTasks, el]})
-            }
-            else if (el.type === 'medium'){
-                this.setState({mediumTasks: [...this.state.mediumTasks, el]})
-            }
-            else if (el.type === 'large'){
-                this.setState({largeTasks: [...this.state.largeTasks, el]})
-            }
+       
+        const smallThings = this.state.smallTasks.map((el,i) => (
+            <h1 key={i}>{el.content}</h1>
         ))
+            
         return (
             <div>
-                
+                {smallThings}
             </div>
         )
     }
