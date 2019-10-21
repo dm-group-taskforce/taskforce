@@ -33,16 +33,15 @@ app.use(session({
 /////////////// Endpoints ////////////////
 
 // Authentication 
-app.get('/auth/user', authController.getSession);
-app.post('/auth/login', authController.login);
-app.post('/auth/logout', authController.logout);
-app.post('/auth/register', authController.register);
-app.delete('/auth/delete', authController.deleteUser);
+app.get('/auth/user', getSession);
+app.post('/auth/login', login);
+app.post('/auth/logout', logout);
+app.post('/auth/register', register);
+app.delete('/auth/delete', deleteUser);
 
 // Character
 app.get('/character/get', getCharacter);
-app.post('/character/create', createCharacter);
-app.put('/character/update', updateCharacter);
+//app.put('/character/update', updateCharacter);
 
 // Task
 app.get('/task/get');
