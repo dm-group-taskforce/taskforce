@@ -1,6 +1,16 @@
 const bcrypt = require("bcryptjs");
 const nodemailer = require('nodemailer');
 
+// Transporter
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    secure: false,
+    auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD
+    },
+});
+
 module.exports = {
     getSession: (req, res) => {
         if(req.session.user) {
@@ -38,7 +48,6 @@ module.exports = {
                     .catch(err => {
                         console.log('error', err)
                     })                
-                    // res.status(200).json(req.session.user);                 
                 const user = registerUser[0];  
                 console.log(user);  
                 req.session.user = { 
