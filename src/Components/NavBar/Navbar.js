@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logoBIG from "../../Assets/logoBIG.png";
+import  "./NavBar.scss";
 
 
 class Navbar extends React.Component {
@@ -24,7 +25,8 @@ class Navbar extends React.Component {
     render() {
         return (
             <>
-            <div>
+            <nav className="tiptop">
+            <div className = "top">
                 <Link to="/">
 
                     <img
@@ -37,7 +39,7 @@ class Navbar extends React.Component {
                 <ul>
                     <Link to='/login'><li>LOGIN</li></Link>
                     <Link to='/register'><li>REGISTER</li></Link>
-                <li>
+                <li className="MB">
                 <img
                                 onClick={this.toggle}
                                 className="hamburgerB"
@@ -57,7 +59,7 @@ class Navbar extends React.Component {
 
 
 
-
+            </nav>
             </>
         )
     }

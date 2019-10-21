@@ -1,0 +1,94 @@
+@import "../../app.scss";
+
+
+.Blogo {
+    height: 5.2vw;
+    width: 20vw;
+}
+.hamburgerB {
+    height: 6vw;
+    width: 6vw;
+    margin-top: 2vw;
+    cursor: pointer;
+}
+.openlist {
+    font-size: 3.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.top {
+    height: 10vw;
+
+}
+.top, ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+div.top-menu, .top-menu-open, .top-menu-close {
+    width: 32vw;
+    height: 32vw;
+    position: fixed;
+    top: 0;
+    right: 31.5rem;
+    transform: translateX(1610px);
+    
+
+}
+
+.top-menu-open {
+    display: block;
+    animation-name: open;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    margin-top: 13vw;
+    background: gray;
+}
+
+.top-menu-close{
+    display: block;
+    animation-name: close;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    margin-top: 13vw;
+}
+.MB {
+    display: none;
+}
+
+
+@keyframes open {
+    from {
+        transform: translateX(1610px)
+    }
+    to {
+        transform: translateX(505px);
+    }
+}
+@keyframes  close {
+    from{
+        transform: translateX(575px)
+    }
+    to {
+        transform: translateX(1610px)
+    }
+}
+
+@media (max-width: 745px) {
+    li {
+        display: none;
+    }
+    .MB {
+        display: block
+    }
+    .top-menu-open{
+        z-index: 10;
+    }
+    .top-menu-close{
+        z-index:-1;
+    }
+}
