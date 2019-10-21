@@ -2,24 +2,12 @@ import Axios from 'axios';
 
 
 const initialState = {
-<<<<<<< HEAD
-<<<<<<< HEAD
-   username: '',
-   user_id: null,
-=======
-=======
->>>>>>> master
     username: '',
     user_id: null,
     email: '',
     first_name: '',
     last_name: '',
     redirect: false
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-
 }
 
 
@@ -117,9 +105,6 @@ export default function reducer(state = initialState, action) {
          }
       default: return state;
    }
-=======
-=======
->>>>>>> master
          case DELETE_USER:
             return {
                user_id: null,
@@ -140,8 +125,4 @@ export default function reducer(state = initialState, action) {
              }
         default: return state;
     }
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
 }
