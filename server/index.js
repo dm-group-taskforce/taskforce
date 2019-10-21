@@ -4,7 +4,6 @@ const app = express();
 const massive = require("massive");
 const session = require("express-session");
 
-
 // Controllers
 const {getSession, login, logout, register, deleteUser} = require('./Controllers/authController')
 const {getCharacter} = require('./Controllers/characterController')
@@ -31,19 +30,24 @@ app.use(session({
 }))
 
 
-
-
 /////////////// Endpoints ////////////////
 
 // Authentication 
-app.get('/auth/user', getSession);
-app.post('/auth/login', login);
-app.post('/auth/logout', logout);
-app.post('/auth/register', register);
-app.delete('/auth/delete', deleteUser);
+app.get('/auth/user', authController.getSession);
+app.post('/auth/login', authController.login);
+app.post('/auth/logout', authController.logout);
+app.post('/auth/register', authController.register);
+app.delete('/auth/delete', authController.deleteUser);
 
 // Character
 app.get('/character/get', getCharacter);
+app.post('/character/create', createCharacter);
+app.put('/character/update', updateCharacter);
+
+// Task
+app.get('/task/get');
+app.post('/task/create');
+
 
 // Rank
 app.get('/rank/get', getRank);
