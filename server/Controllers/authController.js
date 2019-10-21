@@ -49,7 +49,6 @@ module.exports = {
                     .catch(err => {
                         console.log('error', err)
                     })                
-                    res.status(200).json(req.session.user);                 
                 const user = registerUser[0];  
                 console.log(user);  
                 req.session.user = { 
