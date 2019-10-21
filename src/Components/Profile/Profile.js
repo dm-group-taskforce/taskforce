@@ -5,20 +5,37 @@ import {getCharacter} from '../../redux/reducers/characterReducer'
 
 export class Profile extends Component {
 
+    constructor(){
+        super();
+        this.state = {
+            allTasks: [],
+            smallTasks: [],
+            mediumTasks: [],
+            largeTasks: [],
+            completedTasks: []
+        }
+    }
+
     componentDidMount(){
         this.props.getRank();
         this.props.getCharacter();
     }
 
     render() {
+        this.state.allTasks.filter((el) => (
+            if (el.type === 'small'){
+                this.setState({smallTasks: [...this.state.smallTasks, el]})
+            }
+            else if (el.type === 'medium'){
+                this.setState({mediumTasks: [...this.state.mediumTasks, el]})
+            }
+            else if (el.type === 'large'){
+                this.setState({largeTasks: [...this.state.largeTasks, el]})
+            }
+        ))
         return (
             <div>
-                {this.props.first_name}
-                {this.props.last_name}
-                {this.props.abbreviation}
-                {this.props.img}
-                {this.props.experience}
-                {this.props.max_experience}
+                
             </div>
         )
     }
