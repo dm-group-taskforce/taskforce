@@ -13,7 +13,7 @@ export default (
         <Route path="/register" component={Register} />
         <Route path="/tasks" component={NewTask} />
         <Route path="/games" component={Games} />
-        <Route path="/profile/:id" component={Profile} />
+        <Route path="/profile" component={Profile} />
         <Route exact path="/" component={LandingPage} />
     </Switch>
 )
