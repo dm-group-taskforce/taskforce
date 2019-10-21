@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Navbar from '../NavBar/Navbar';
 import logoBIG from "../../Assets/logoBIG.png";
-import {logoutUser, getUser} from "../../redux/reducers/userReducer"
+import {logoutUser, getUser} from "../../redux/reducers/userReducer";
+import "./SignedInNav.scss";
 
 
 class SignedInNav extends React.Component {
@@ -31,7 +32,7 @@ class SignedInNav extends React.Component {
 
 
     render() {
-        if (this.props.loggedin === undefined) {
+        if (this.props.loggedin === null) {
             return (
                 <Navbar />
             )
@@ -68,6 +69,7 @@ class SignedInNav extends React.Component {
 
                 </div>
                 <div className={`${this.state.menuOpenStatus}`}>
+                    <div className = "openlist">
                     <Link to="/profile">
                         <h3 id="pro">PROFILE</h3> </Link>
                     <Link to="/games">
@@ -82,6 +84,7 @@ class SignedInNav extends React.Component {
                         <h3 id="lo"
                             onClick={this.handleClickLo}>LOG OUT</h3>
                     </Link>
+                    </div>
                 </div>
 
 

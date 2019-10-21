@@ -1,0 +1,51 @@
+@import "../../app.scss";
+
+
+.Blogo {
+    height: 5.2vw;
+    width: 20vw;
+}
+.hamburgerB {
+    height: 6vw;
+    width: 6vw;
+    margin-top: 2vw;
+    cursor: pointer;
+}
+
+.openlist {
+    font-size: 3.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+@keyframes open {
+    from {
+        transform: translateX(1610px)
+    }
+    to {
+        transform: translateX(505px);
+    }
+}
+@keyframes  close {
+    from{
+        transform: translateX(575px)
+    }
+    to {
+        transform: translateX(1610px)
+    }
+}
+
+@media (max-width: 745px) {
+    li {
+        display: none;
+    }
+    .top-menu-open{
+        z-index: 10;
+    }
+    .top-menu-close{
+        z-index:-1;
+    }
+}

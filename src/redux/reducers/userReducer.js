@@ -20,28 +20,28 @@ const GET_USER = 'GET_USER';
 
 
 export function registerUser(newUser) {
-    return {
-       type: REGISTER_USER,
-       payload: Axios.post('/auth/register', newUser)
-    }
- }
+   return {
+      type: REGISTER_USER,
+      payload: Axios.post('/auth/register', newUser)
+   }
+}
 
 export function loginUser(user) {
-    return {
-       type: LOGIN_USER,
-       payload: Axios.post('/auth/login', user)
-    }
- }
+   return {
+      type: LOGIN_USER,
+      payload: Axios.post('/auth/login', user)
+   }
+}
 
 export function logoutUser() {
-    Axios.post('/auth/logout')
- 
-    return {
-       type: LOGOUT_USER
-    }
- }
+   Axios.post('/auth/logout')
 
-export function deleteUser(){
+   return {
+      type: LOGOUT_USER
+   }
+}
+
+export function deleteUser() {
    Axios.delete('/auth/delete')
 
    return {
@@ -49,20 +49,20 @@ export function deleteUser(){
    }
 }
 
-export function getUser(){
-    return {
-        type: GET_USER,
-        action: Axios.get('/auth/user')
-    }
+export function getUser() {
+   return {
+      type: GET_USER,
+      action: Axios.get('/auth/user')
+   }
 }
 
-export default function reducer(state = initialState, action){
-    const {type, payload} = action;
+export default function reducer(state = initialState, action) {
+   const { type, payload } = action;
 
-    
 
-    switch(type){
-        case `${REGISTER_USER}_FULFILLED`:
+
+   switch (type) {
+      case `${REGISTER_USER}_FULFILLED`:
          return {
             ...state,
             user_id: payload.data.user_id,
@@ -72,8 +72,8 @@ export default function reducer(state = initialState, action){
             last_name: payload.data.last_name,
             redirect: true
          };
-         case `${LOGIN_USER}_FULFILLED`:
-            
+      case `${LOGIN_USER}_FULFILLED`:
+
          return {
             ...state,
             user_id: payload.data.user_id,
@@ -83,7 +83,7 @@ export default function reducer(state = initialState, action){
             last_name: payload.data.last_name,
             redirect: true
          };
-         case LOGOUT_USER:
+      case LOGOUT_USER:
          return {
             user_id: null,
             username: '',
