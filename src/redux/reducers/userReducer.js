@@ -2,8 +2,17 @@ import Axios from 'axios';
 
 
 const initialState = {
+<<<<<<< HEAD
    username: '',
    user_id: null,
+=======
+    username: '',
+    user_id: null,
+    email: '',
+    first_name: '',
+    last_name: '',
+    redirect: false
+>>>>>>> master
 
 }
 
@@ -12,7 +21,7 @@ const REGISTER_USER = 'REGISTER_USER';
 const LOGIN_USER = 'LOGIN_USER';
 const LOGOUT_USER = 'LOGOUT_USER';
 const DELETE_USER = 'DELETE_USER';
-const GET_USER = 'GET_USER';
+const GET_USER = 'GET_USER'; 
 
 
 export function registerUser(newUser) {
@@ -63,19 +72,32 @@ export default function reducer(state = initialState, action) {
             ...state,
             user_id: payload.data.user_id,
             username: payload.data.username,
+            email: payload.data.email,
+            first_name: payload.data.first_name,
+            last_name: payload.data.last_name,
+            redirect: true
          };
       case `${LOGIN_USER}_FULFILLED`:
 
          return {
             ...state,
             user_id: payload.data.user_id,
-            username: payload.data.username
+            username: payload.data.username,
+            email: payload.data.email,
+            first_name: payload.data.first_name,
+            last_name: payload.data.last_name,
+            redirect: true
          };
       case LOGOUT_USER:
          return {
             user_id: null,
-            username: ''
+            username: '',
+            email: '',
+            first_name: '',
+            last_name: '',
+            redirect: false
          };
+<<<<<<< HEAD
       case DELETE_USER:
          return {
             user_id: null,
@@ -88,4 +110,26 @@ export default function reducer(state = initialState, action) {
          }
       default: return state;
    }
+=======
+         case DELETE_USER:
+            return {
+               user_id: null,
+               username: '',
+               email: '',
+               first_name: '',
+               last_name: '',
+               redirect: false
+            }
+         case `${GET_USER}_FULFILLED`:
+             return{
+               user_id: payload.data.user_id,
+               username: payload.data.username,
+               email: payload.data.email,
+               first_name: payload.data.first_name,
+               last_name: payload.data.last_name,
+               redirect: true
+             }
+        default: return state;
+    }
+>>>>>>> master
 }
