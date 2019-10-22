@@ -22,10 +22,10 @@ export function addTask(newTask) {
         payload: Axios.post('/task/create', newTask)
     }
 }
-export function editTask(task_id) {
+export function editTask(task_id, taskChanges) {
     return {
         type: EDIT_TASK,
-        payload: Axios.put(`/task/edit/${task_id}`)
+        payload: Axios.put(`/task/edit/${task_id}`, taskChanges)
     }
 }
 export function deleteTask(task_id) {
@@ -39,22 +39,22 @@ export function deleteTask(task_id) {
 export default function Reducer(state = initialState, action) {
     const {type, payload} = action;
     switch(type) { 
-        case `$(GET_USER_TASK)_FULFILLED`:
+        case `${GET_USER_TASK}_FULFILLED`:
             return {
                 ...state,
                 tasks: payload.data
             };
-        case `$(ADD_TASK)_FULFILLED`:
+        case `${ADD_TASK}_FULFILLED`:
             return {
                 ...state,
                 tasks: payload.data
             };
-        case `$(EDIT_TASK)_FULFILLED`:
+        case `${EDIT_TASK}_FULFILLED`:
             return {
                 ...state,
                 tasks: payload.data
             };
-        case `$(DELETE_TASK)_FULFILLED`:
+        case `${DELETE_TASK}_FULFILLED`:
             return {
                 ...state,
                 tasks: payload.data
