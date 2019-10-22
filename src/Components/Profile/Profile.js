@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {getRank} from '../../redux/reducers/rankReducer'
 import {getCharacter} from '../../redux/reducers/characterReducer'
+import Tasks from '../Tasks/Tasks';
+import {getUserTask} from '../../redux/reducers/taskReducer'
+import Axios from 'axios'
 
 export class Profile extends Component {
 
     constructor(){
         super();
         this.state = {
-            allTasks: [{type: 'daily', content: 'HI'}],
+            allTasks: [],
             dailyTasks: [],
             weeklyTasks: [],
             monthlyTasks: [],
@@ -17,19 +20,30 @@ export class Profile extends Component {
     }
 
     componentDidMount(){
+        // this.props.getUserTask();
+        // this.setState({allTasks: [...this.props.tasks]})
+        Axios.get('/task/get').then(response => {
+            
+            this.setState({allTasks: response.data}, this.handleStart)
+        })
+        
         this.props.getRank();
         this.props.getCharacter();
+        
+    }
+
+    handleStart = () => {
         const daily =  this.state.allTasks.filter((el) => (
-            el.type === 'daily'
+            el.time === 'daily'
         ))
         const weekly =  this.state.allTasks.filter((el) => (
-            el.type === 'weekly'
+            el.time === 'weekly'
         ))
         const monthly =  this.state.allTasks.filter((el) => (
-            el.type === 'monthly'
+            el.time === 'monthly'
         ))
         const completed =  this.state.allTasks.filter((el) => (
-            el.type === 'completed'
+            el.time === 'completed'
         ))
         this.setState({dailyTasks: [...daily], weeklyTasks: [...weekly], monthlyTasks: [...monthly], completedTasks: [...completed]})
     }
@@ -37,33 +51,67 @@ export class Profile extends Component {
     render() {
        
         const dailyThings = this.state.dailyTasks.map((el,i) => (
-            <h1 key={i}>{el.content}</h1>
+            <Tasks
+            key={i}
+            id = {el.id}
+            content = {el.content}
+            type = {el.type}
+            time = {el.time}
+            points = {el.points}
+            />
         ))
         const weeklyThings = this.state.weeklyTasks.map((el,i) => (
-            <h1 key={i}>{el.content}</h1>
+            <Tasks
+            key={i}
+            id = {el.id}
+            content = {el.content}
+            type = {el.type}
+            time = {el.time}
+            points = {el.points}
+            />
         ))
         const monthlyThings = this.state.monthlyTasks.map((el,i) => (
-            <h1 key={i}>{el.content}</h1>
+            <Tasks
+            key={i}
+            id = {el.id}
+            content = {el.content}
+            type = {el.type}
+            time = {el.time}
+            points = {el.points}
+            />
         ))
         const completeThings = this.state.completedTasks.map((el,i) => (
-            <h1 key={i}>{el.content}</h1>
+            <Tasks
+            key={i}
+            id = {el.id}
+            content = {el.content}
+            type = {el.type}
+            time = {el.time}
+            points = {el.points}
+            />
         ))
             
+        
         return (
             <div>
+                <button>Add New Task</button>
                 <section>
+                    <h1>Daily</h1>
                     {dailyThings}
                 </section>
 
                 <section>
+                    <h1>Weekly</h1>
                     {weeklyThings}
                 </section>
 
                 <section>
+                    <h1>Monthly</h1>
                     {monthlyThings}
                 </section>
 
                 <section>
+                    <h1>Completed</h1>
                     {completeThings}
                 </section>
 
@@ -79,12 +127,14 @@ const mapStateToProps = (reduxState) => ({
     abbreviation: reduxState.rankReducer.abbreviation,
     img: reduxState.rankReducer.img,
     experience: reduxState.characterReducer.experience,
-    max_experience: reduxState.characterReducer.max_experience
+    max_experience: reduxState.characterReducer.max_experience,
+    tasks: reduxState.taskReducer.tasks
 })
 
 const mapDispatchToProps = {
     getRank,
-    getCharacter
+    getCharacter,
+    getUserTask
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)
