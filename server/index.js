@@ -9,6 +9,7 @@ const {getSession, login, logout, register, deleteUser} = require('./Controllers
 const {getCharacter, updateCharacter} = require('./Controllers/characterController')
 const {getRank, editRank} = require('./Controllers/rankController')
 const {getTasks, addTask, editTask, deleteTask} = require('./Controllers/taskController')
+const {getUserData} = require('./Controllers/chartController')
 
 const {CONNECTION_STRING, SERVER_PORT,  SESSION_SECRET} = process.env;
 
@@ -55,6 +56,9 @@ app.delete('/task/delete/:id', deleteTask);
 app.get('/rank/get', getRank);
 app.put('/rank/edit', editRank);
 
+// Chart Data
+app.get('/chart/get', getUserData);
+// app.put('/chart/edit', editChartData);
 
 app.listen(SERVER_PORT, () => {
     console.log(`Server listening on ${SERVER_PORT}`)

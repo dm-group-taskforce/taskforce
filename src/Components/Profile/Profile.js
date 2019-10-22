@@ -4,6 +4,7 @@ import {getRank} from '../../redux/reducers/rankReducer'
 import {getCharacter} from '../../redux/reducers/characterReducer'
 import Tasks from '../Tasks/Tasks';
 import {getUserTask} from '../../redux/reducers/taskReducer'
+import Chart from '../Chart/Chart';
 import Axios from 'axios'
 
 export class Profile extends Component {
@@ -114,7 +115,7 @@ export class Profile extends Component {
                     <h1>Completed</h1>
                     {completeThings}
                 </section>
-
+                <Chart/>
                 
             </div>
         )
