@@ -91,21 +91,7 @@ export default function reducer(state = initialState, action) {
             last_name: '',
             redirect: false
          };
-<<<<<<< HEAD
-<<<<<<< HEAD
       case DELETE_USER:
-         return {
-            user_id: null,
-            username: ''
-         }
-      case GET_USER:
-         return {
-            user_id: payload.data.user_id,
-            username: payload.data.username
-         }
-      default: return state;
-   }
-         case DELETE_USER:
             return {
                user_id: null,
                username: '',
@@ -114,8 +100,8 @@ export default function reducer(state = initialState, action) {
                last_name: '',
                redirect: false
             }
-         case `${GET_USER}_FULFILLED`:
-             return{
+      case `${GET_USER}_FULFILLED`:
+            return{
                user_id: payload.data.user_id,
                username: payload.data.username,
                email: payload.data.email,

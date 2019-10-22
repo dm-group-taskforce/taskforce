@@ -8,10 +8,10 @@ export class Profile extends Component {
     constructor(){
         super();
         this.state = {
-            allTasks: [],
-            smallTasks: [],
-            mediumTasks: [],
-            largeTasks: [],
+            allTasks: [{type: 'daily', content: 'HI'}],
+            dailyTasks: [],
+            weeklyTasks: [],
+            monthlyTasks: [],
             completedTasks: []
         }
     }
@@ -19,22 +19,54 @@ export class Profile extends Component {
     componentDidMount(){
         this.props.getRank();
         this.props.getCharacter();
+        const daily =  this.state.allTasks.filter((el) => (
+            el.type === 'daily'
+        ))
+        const weekly =  this.state.allTasks.filter((el) => (
+            el.type === 'weekly'
+        ))
+        const monthly =  this.state.allTasks.filter((el) => (
+            el.type === 'monthly'
+        ))
+        const completed =  this.state.allTasks.filter((el) => (
+            el.type === 'completed'
+        ))
+        this.setState({dailyTasks: [...daily], weeklyTasks: [...weekly], monthlyTasks: [...monthly], completedTasks: [...completed]})
     }
 
     render() {
-        this.state.allTasks.filter((el) => (
-            if (el.type === 'small'){
-                this.setState({smallTasks: [...this.state.smallTasks, el]})
-            }
-            else if (el.type === 'medium'){
-                this.setState({mediumTasks: [...this.state.mediumTasks, el]})
-            }
-            else if (el.type === 'large'){
-                this.setState({largeTasks: [...this.state.largeTasks, el]})
-            }
+       
+        const dailyThings = this.state.dailyTasks.map((el,i) => (
+            <h1 key={i}>{el.content}</h1>
         ))
+        const weeklyThings = this.state.weeklyTasks.map((el,i) => (
+            <h1 key={i}>{el.content}</h1>
+        ))
+        const monthlyThings = this.state.monthlyTasks.map((el,i) => (
+            <h1 key={i}>{el.content}</h1>
+        ))
+        const completeThings = this.state.completedTasks.map((el,i) => (
+            <h1 key={i}>{el.content}</h1>
+        ))
+            
         return (
             <div>
+                <section>
+                    {dailyThings}
+                </section>
+
+                <section>
+                    {weeklyThings}
+                </section>
+
+                <section>
+                    {monthlyThings}
+                </section>
+
+                <section>
+                    {completeThings}
+                </section>
+
                 
             </div>
         )

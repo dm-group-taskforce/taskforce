@@ -6,7 +6,7 @@ import Games from "./Components/Games/Games";
 import Profile from "./Components/Profile/Profile";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Login from './Components/Login/Login'
-import Account from "./Components/Account/Account"
+import Account from "./Components/Account/Account" 
 
 export default (
     <Switch>

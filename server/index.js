@@ -6,8 +6,9 @@ const session = require("express-session");
 
 // Controllers
 const {getSession, login, logout, register, deleteUser} = require('./Controllers/authController')
-const {getCharacter} = require('./Controllers/characterController')
-const {getRank} = require('./Controllers/rankController')
+const {getCharacter, updateCharacter} = require('./Controllers/characterController')
+const {getRank, editRank} = require('./Controllers/rankController')
+const {getTasks, addTask, editTask, deleteTask} = require('./Controllers/taskController')
 
 const {CONNECTION_STRING, SERVER_PORT,  SESSION_SECRET} = process.env;
 
@@ -33,24 +34,26 @@ app.use(session({
 /////////////// Endpoints ////////////////
 
 // Authentication 
-app.get('/auth/user', authController.getSession);
-app.post('/auth/login', authController.login);
-app.post('/auth/logout', authController.logout);
-app.post('/auth/register', authController.register);
-app.delete('/auth/delete', authController.deleteUser);
+app.get('/auth/user', getSession);
+app.post('/auth/login', login);
+app.post('/auth/logout', logout);
+app.post('/auth/register', register);
+app.delete('/auth/delete', deleteUser);
 
 // Character
 app.get('/character/get', getCharacter);
-app.post('/character/create', createCharacter);
 app.put('/character/update', updateCharacter);
 
 // Task
-app.get('/task/get');
-app.post('/task/create');
+app.get('/task/get', getTasks);
+app.post('/task/create', addTask);
+app.put('/task/edit/:id', editTask);
+app.delete('/task/delete/:id', deleteTask);
 
 
 // Rank
 app.get('/rank/get', getRank);
+app.put('/rank/edit', editRank);
 
 
 app.listen(SERVER_PORT, () => {
