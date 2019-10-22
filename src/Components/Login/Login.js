@@ -27,7 +27,6 @@ export class Login extends Component {
                 return <Redirect to='/profile'/>
             }
         return (
-              
             <div>
                 <section>
                     <h1>Username</h1>
