@@ -7,7 +7,12 @@ async function getCharacter(req, res){
     res.status(200).json(req.session.character)
 }
 
+async function updateCharacter(req, res){
+
+}
+
 
 module.exports ={
-    getCharacter
+    getCharacter,
+    updateCharacter
 }
