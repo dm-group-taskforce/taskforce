@@ -4,6 +4,7 @@
 .Blogo {
     height: 5.2vw;
     width: 20vw;
+    margin-left: 5vw;
 }
 .hamburgerB {
     height: 6vw;
@@ -17,16 +18,43 @@
     flex-direction: column;
     align-items: center;
 }
+
 .top {
     height: 10vw;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
 
+}
+a:link{
+    text-decoration: none;
+    width: 10vw;
+}
+.lilnav{
+    display:flex;
+    height: 25%;
+    width: 18vw;
+    justify-content: center;
+    text-align: bottom;
+    background-color:blue;
+    margin-top: 3.5vw;
+    margin-right: 5vw;
+}
+.lis {
+    width: 75%;
+    height: 100%;    
+    font-size: 1.5vw;
+    color: green;
+    background-color: gray;
+    margin-right: -5vw;
 }
 .top, ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
 }
+
 div.top-menu, .top-menu-open, .top-menu-close {
     width: 32vw;
     height: 32vw;
