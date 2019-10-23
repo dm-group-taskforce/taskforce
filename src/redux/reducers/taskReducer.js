@@ -42,22 +42,22 @@ export default function Reducer(state = initialState, action) {
         case `${GET_USER_TASK}_FULFILLED`:
             return {
                 ...state,
-                tasks: payload.data
+                tasks: [...payload.data]
             };
         case `${ADD_TASK}_FULFILLED`:
             return {
                 ...state,
-                tasks: payload.data
+                tasks: [...payload.data]
             };
         case `${EDIT_TASK}_FULFILLED`:
             return {
                 ...state,
-                tasks: payload.data
+                tasks: [...payload.data]
             };
         case `${DELETE_TASK}_FULFILLED`:
             return {
                 ...state,
-                tasks: payload.data
+                tasks: [...payload.data]
             };
         default: return state;
     }
