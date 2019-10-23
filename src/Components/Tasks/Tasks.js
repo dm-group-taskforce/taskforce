@@ -17,13 +17,15 @@ export class Tasks extends Component {
         
     }
 
+   
+
+
     render() {
         return (
             <div>
                 {this.props.content}
                 {this.props.type}
                 {this.props.points}
-                <button>Delete</button>
                 {this.props.time !== 'completed'? 
                 <>
                 <button>Edit</button>
