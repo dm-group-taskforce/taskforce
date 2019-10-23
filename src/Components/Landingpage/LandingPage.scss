@@ -1,0 +1,12 @@
+@import "../../app.scss";
+
+
+body {
+    background-image: url(../../Assets/pixelback.png);
+    height: 350vh;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+}
