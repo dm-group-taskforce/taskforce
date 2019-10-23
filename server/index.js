@@ -31,9 +31,6 @@ app.use(session({
     }
 }))
 
-
-/////////////// Endpoints ////////////////
-
 // Authentication 
 app.get('/auth/user', getSession);
 app.post('/auth/login', login);
@@ -50,7 +47,6 @@ app.get('/task/get', getTasks);
 app.post('/task/create', addTask);
 app.put('/task/edit/:id', editTask);
 app.delete('/task/delete/:id', deleteTask);
-
 
 // Rank
 app.get('/rank/get', getRank);

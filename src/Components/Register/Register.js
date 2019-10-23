@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {registerUser} from '../../redux/reducers/userReducer'
 import {Redirect} from 'react-router-dom'
 
-export class Register extends Component {
+class Register extends Component {
 
     constructor(){
         super();
@@ -38,7 +38,7 @@ export class Register extends Component {
         }
         return (
 
-            <div>
+            <div className="register-container">
                 <section>
                     <h1>Username:</h1>
                     <input name='username' onChange={this.handleInputs}/>
@@ -59,7 +59,9 @@ export class Register extends Component {
                     <h1>Password: </h1>
                     <input name='password' onChange={this.handleInputs}/>
                 </section>
-               <button onClick={this.handleRegister}>Register</button> 
+                <div className="register-btn">
+                    <button onClick={this.handleRegister}>Register</button> 
+                </div>
             </div>
         )
     }
