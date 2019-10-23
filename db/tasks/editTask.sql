@@ -2,7 +2,7 @@ UPDATE tasks
 SET content = $1,
     type = $2,
     time= $3,
-    points = $4,
+    points = $4
 WHERE id = $5;
 
 
