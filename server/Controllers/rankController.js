@@ -8,6 +8,11 @@ async function getRank(req, res){
     res.status(200).json(req.session.rank);
 }
 
+async function editRank(req, res){
+
+}
+
 module.exports ={
-    getRank
+    getRank,
+    editRank
 }

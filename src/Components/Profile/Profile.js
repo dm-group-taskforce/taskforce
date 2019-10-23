@@ -2,44 +2,121 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {getRank} from '../../redux/reducers/rankReducer'
 import {getCharacter} from '../../redux/reducers/characterReducer'
+import Tasks from '../Tasks/Tasks';
+import {getUserTask} from '../../redux/reducers/taskReducer'
+import Chart from '../Chart/Chart';
+import Axios from 'axios'
 
 export class Profile extends Component {
 
     constructor(){
         super();
         this.state = {
-            allTasks: [{type: 'small', content: 'HI'}],
-            smallTasks: [],
-            mediumTasks: [],
-            largeTasks: [],
+            allTasks: [],
+            dailyTasks: [],
+            weeklyTasks: [],
+            monthlyTasks: [],
             completedTasks: []
         }
     }
 
     componentDidMount(){
+        // this.props.getUserTask();
+        // this.setState({allTasks: [...this.props.tasks]})
+        Axios.get('/task/get').then(response => {
+            
+            this.setState({allTasks: response.data}, this.handleStart)
+        })
+        
         this.props.getRank();
         this.props.getCharacter();
-        const small =  this.state.allTasks.filter((el) => (
-            el.type === 'small'
+        
+    }
+
+    handleStart = () => {
+        const daily =  this.state.allTasks.filter((el) => (
+            el.time === 'daily'
         ))
-        const medium =  this.state.allTasks.filter((el) => (
-            el.type === 'medium'
+        const weekly =  this.state.allTasks.filter((el) => (
+            el.time === 'weekly'
         ))
-        const large =  this.state.allTasks.filter((el) => (
-            el.type === 'large'
+        const monthly =  this.state.allTasks.filter((el) => (
+            el.time === 'monthly'
         ))
-        this.setState({smallTasks: [...small], mediumTasks: [...medium], largeTasks: [...large]})
+        const completed =  this.state.allTasks.filter((el) => (
+            el.time === 'completed'
+        ))
+        this.setState({dailyTasks: [...daily], weeklyTasks: [...weekly], monthlyTasks: [...monthly], completedTasks: [...completed]})
     }
 
     render() {
        
-        const smallThings = this.state.smallTasks.map((el,i) => (
-            <h1 key={i}>{el.content}</h1>
+        const dailyThings = this.state.dailyTasks.map((el,i) => (
+            <Tasks
+            key={i}
+            id = {el.id}
+            content = {el.content}
+            type = {el.type}
+            time = {el.time}
+            points = {el.points}
+            />
+        ))
+        const weeklyThings = this.state.weeklyTasks.map((el,i) => (
+            <Tasks
+            key={i}
+            id = {el.id}
+            content = {el.content}
+            type = {el.type}
+            time = {el.time}
+            points = {el.points}
+            />
+        ))
+        const monthlyThings = this.state.monthlyTasks.map((el,i) => (
+            <Tasks
+            key={i}
+            id = {el.id}
+            content = {el.content}
+            type = {el.type}
+            time = {el.time}
+            points = {el.points}
+            />
+        ))
+        const completeThings = this.state.completedTasks.map((el,i) => (
+            <Tasks
+            key={i}
+            id = {el.id}
+            content = {el.content}
+            type = {el.type}
+            time = {el.time}
+            points = {el.points}
+            />
         ))
             
+        
         return (
             <div>
-                {smallThings}
+                <button>Add New Task</button>
+                <section>
+                    <h1>Daily</h1>
+                    {dailyThings}
+                </section>
+
+                <section>
+                    <h1>Weekly</h1>
+                    {weeklyThings}
+                </section>
+
+                <section>
+                    <h1>Monthly</h1>
+                    {monthlyThings}
+                </section>
+
+                <section>
+                    <h1>Completed</h1>
+                    {completeThings}
+                </section>
+                <Chart/>
+                
             </div>
         )
     }
@@ -51,12 +128,14 @@ const mapStateToProps = (reduxState) => ({
     abbreviation: reduxState.rankReducer.abbreviation,
     img: reduxState.rankReducer.img,
     experience: reduxState.characterReducer.experience,
-    max_experience: reduxState.characterReducer.max_experience
+    max_experience: reduxState.characterReducer.max_experience,
+    tasks: reduxState.taskReducer.tasks
 })
 
 const mapDispatchToProps = {
     getRank,
-    getCharacter
+    getCharacter,
+    getUserTask
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)
