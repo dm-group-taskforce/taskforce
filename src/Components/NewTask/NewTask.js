@@ -1,60 +1,105 @@
 import React from "react";
 import {connect} from 'react-redux';
 import {getUserTask, addTask, editTask, deleteTask} from '../../redux/reducers/taskReducer';
+import {Link} from 'react-router-dom'
+import TaskConfirmation from '../TaskConfirmation/TaskConfirmation';
 
 class NewTask extends React.Component {
 
     constructor() {
         super();
-        this.state = {}            
+        this.state = {
+            content: '',
+            type: 'health',
+            time: 'daily',
+            showCon: false
+        }            
     }
 
-    componentDidMount() {
-        this.props.getUserTask(this.props.match.params.task_id);
+    handleInputs = e =>{
+        this.setState({[e.target.name]: e.target.value})
     }
 
-    handleAddTask() {
+    toggleShowCon = () =>{
+        this.setState({showCon: !this.state.showCon})
+    }
+
+    handleAddTask = () => {
         const {addTask} = this.props;
-        addTask()
+        const {content, type, time} = this.state;
+        addTask({
+            content,
+            type,
+            time,
+            points: 10
+        })
+        this.toggleShowCon();
+        
     }
 
     handleDeleteTask(task_id) {
         const {deleteTask} = this.props;
         deleteTask(task_id); 
     }
+    
 
     render() {
-        const taskDisplay = this.props.tasks.map((tasks, index) => {
-            return (
-                <div className="task-container">
-                    <div key={index} className='task-item'>                     
-                        <p>{tasks}</p>
-                        <button 
-                        className="delete-task-btn"
-                        type="button"
-                        onClick={() => this.handleDeleteTask(this.props.match.params.task_id)}
-                        >Delete</button>                                  
-                    </div>               
-                </div>
-            )
-        })
-
         return (
             <main>
                 <div>
-                    <p>Add new tasks</p>
+                    <h1>What to do:</h1>
+                    <input name='content' onChange={this.handleInputs} placeholder='content'/>
                 </div>
-                {taskDisplay}
+                <div>
+                    <select name='type' onChange={this.handleInputs}>
+                        <option value='health'>
+                            Health
+                        </option>
+                        <option value='social'>
+                            Social
+                        </option>
+                        <option value='education'>
+                            Education
+                        </option>
+                        <option value ='hobby'>
+                            Hobby
+                        </option>
+                        <option value = 'work'>
+                            Work
+                        </option>
+                        <option value ='personal'>
+                            Personal
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <select name='time' onChange={this.handleInputs}>
+                        <option value = 'daily'>
+                            Daily
+                        </option>
+                        <option value ='weekly'>
+                            Weekly
+                        </option>
+                        <option value ='monthly'>
+                            Monthly
+                        </option>
+                    </select>
+                </div>
+                <button onClick={this.handleAddTask}>Add Task</button>
+                <Link to='/profile'><button>Cancel</button></Link>
+                {this.state.showCon === true ?
+                <TaskConfirmation function={this.toggleShowCon}/>:
+                null
+                }
+                
             </main>
         )
     }
 }
 
-const mapStateToProps = reduxState => {
-    return {
-        tasks: reduxState.cardReducer.tasks
-    }
-}
+const mapStateToProps = (reduxState) => ({
+    
+})
 
 export default connect(mapStateToProps, 
     {

@@ -61,6 +61,7 @@ module.exports = {
             }
              db.character.createCharacter(req.session.user.user_id);
              db.rank.createRank(req.session.user.user_id);
+             db.chart.createChart(req.session.user.user_id);
             res.status(200).json(req.session.user); 
         };    
     },

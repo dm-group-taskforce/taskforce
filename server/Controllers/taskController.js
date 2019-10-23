@@ -6,8 +6,8 @@ async function getTasks(req, res){
 async function addTask(req, res){
     const {user_id} = req.session.user;
     const {content, time, type, points} = req.body;
-    await req.app.get('db').tasks.addTask(user_id, content, time, type, points)
-    res.sendStatus(200)
+    const tasks = await req.app.get('db').tasks.addTask(user_id, content, time, type, points)
+    res.status(200).json(tasks)
 }
 
 async function editTask(req, res){

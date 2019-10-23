@@ -10,6 +10,7 @@ export class Tasks extends Component {
                 {this.props.points}
                 <button>Edit</button>
                 <button>Delete</button>
+                <button>Complete Task</button>
             </div>
         )
     }
