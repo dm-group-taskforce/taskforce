@@ -5,7 +5,6 @@ import {getCharacter} from '../../redux/reducers/characterReducer'
 import Tasks from '../Tasks/Tasks';
 import {getUserTask} from '../../redux/reducers/taskReducer'
 import Chart from '../Chart/Chart';
-import Axios from 'axios'
 import {Link} from 'react-router-dom'
 
 export class Profile extends Component {
@@ -22,16 +21,21 @@ export class Profile extends Component {
     }
 
     componentDidMount(){
-        // this.props.getUserTask();
-        // this.setState({allTasks: [...this.props.tasks]})
-        Axios.get('/task/get').then(response => {
-            
-            this.setState({allTasks: response.data}, this.handleStart)
+        this.props.getUserTask().then(() =>{
+            this.setState({allTasks: [...this.props.tasks]}, this.handleStart)
         })
+        // Axios.get('/task/get').then(response => {
+            
+        //     this.setState({allTasks: response.data}, this.handleStart)
+        // })
         
         this.props.getRank();
         this.props.getCharacter();
         
+    }
+    
+    updateTasks = () =>{
+        this.setState({allTasks: [...this.props.tasks]}, this.handleStart)
     }
 
     handleStart = () => {
@@ -52,7 +56,6 @@ export class Profile extends Component {
 
     render() {
 
-        
        
         const dailyThings = this.state.dailyTasks.map((el,i) => (
             <Tasks
@@ -62,6 +65,7 @@ export class Profile extends Component {
             type = {el.type}
             time = {el.time}
             points = {el.points}
+            update = {this.updateTasks}
             />
         ))
         const weeklyThings = this.state.weeklyTasks.map((el,i) => (
@@ -72,6 +76,7 @@ export class Profile extends Component {
             type = {el.type}
             time = {el.time}
             points = {el.points}
+            update = {this.updateTasks}
             />
         ))
         const monthlyThings = this.state.monthlyTasks.map((el,i) => (
@@ -82,6 +87,7 @@ export class Profile extends Component {
             type = {el.type}
             time = {el.time}
             points = {el.points}
+            update = {this.updateTasks}
             />
         ))
         const completeThings = this.state.completedTasks.map((el,i) => (
