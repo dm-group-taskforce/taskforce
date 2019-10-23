@@ -6,6 +6,7 @@ import Tasks from '../Tasks/Tasks';
 import {getUserTask} from '../../redux/reducers/taskReducer'
 import Chart from '../Chart/Chart';
 import Axios from 'axios'
+import {Link} from 'react-router-dom'
 
 export class Profile extends Component {
 
@@ -50,6 +51,8 @@ export class Profile extends Component {
     }
 
     render() {
+
+        
        
         const dailyThings = this.state.dailyTasks.map((el,i) => (
             <Tasks
@@ -95,7 +98,7 @@ export class Profile extends Component {
         
         return (
             <div>
-                <button>Add New Task</button>
+                <Link to='/tasks'><button>Add New Task</button></Link>
                 <section>
                     <h1>Daily</h1>
                     {dailyThings}
