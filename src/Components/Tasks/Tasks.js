@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {editTask} from '../../redux/reducers/taskReducer'
 import {Link} from 'react-router-dom'
+import {updateCharacter} from '../../redux/reducers/characterReducer'
 
 export class Tasks extends Component {
 
@@ -13,6 +14,9 @@ export class Tasks extends Component {
             points,
             time: 'completed'
         }).then(() => {
+            this.props.updateCharacter({
+                points: this.props.points
+            });
             this.props.update();
         })
         
@@ -46,7 +50,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-    editTask
+    editTask,
+    updateCharacter
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tasks)

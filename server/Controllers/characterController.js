@@ -8,7 +8,13 @@ async function getCharacter(req, res){
 }
 
 async function updateCharacter(req, res){
-
+    const {points} = req.body
+    const {user_id} = req.session.user;
+   
+    const char = await req.app.get('db').character.editCharacter(points, user_id);
+    
+    
+    res.status(200).json(char[0]);
 }
 
 

@@ -40,7 +40,7 @@ app.delete('/auth/delete', deleteUser);
 
 // Character
 app.get('/character/get', getCharacter);
-app.put('/character/update', updateCharacter);
+app.put('/character/edit', updateCharacter);
 
 // Task
 app.get('/task/get', getTasks);

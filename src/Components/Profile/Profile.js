@@ -137,6 +137,9 @@ export class Profile extends Component {
         
         return (
             <div>
+                <h1>
+                    {this.props.experience}/{this.props.max_experience}
+                </h1>
                 <Link to='/tasks'><button>Add New Task</button></Link>
                 <section>
                     <h1>Daily</h1>
