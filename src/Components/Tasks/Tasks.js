@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {editTask} from '../../redux/reducers/taskReducer'
+import {Link} from 'react-router-dom'
 
 export class Tasks extends Component {
 
@@ -28,7 +29,7 @@ export class Tasks extends Component {
                 {this.props.points}
                 {this.props.time !== 'completed'? 
                 <>
-                <button>Edit</button>
+                <Link to={`/tasks/${this.props.id}`}><button>Edit</button></Link>
                 <button onClick={this.completeTask}>Complete Task</button>
                 </>:
                 null
