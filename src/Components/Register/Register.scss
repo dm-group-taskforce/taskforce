@@ -1,0 +1,60 @@
+// .intro-reg-page {
+//     box-sizing: border-box;
+//     margin: 0;
+// }
+
+// .outer-container {
+//     width: 100vw;
+//     padding-right: 12px;
+//     padding-left: 12px;
+//     margin-right: auto;
+//     margin-left: auto;
+    
+// }
+
+.register-container {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Varela Round', sans-serif;
+    // margin: 75px;
+}
+
+// left box
+.content-box {
+    width: 35vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 15vw;
+}
+.content-box h1 {
+    font-size: 3vw;
+}
+.content-box p {
+    margin-top: 1.5vw;
+}
+// right box
+.register-box {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.register-box h1 {
+    font-size: 2vw;
+}
+
+.register-btn {
+    background-color: #3ccfcf;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    max-width: 100%;
+    transition: all .12s cubic-bezier(.47,0,.745,.715);
+    width: auto;
+}
