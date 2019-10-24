@@ -30,12 +30,13 @@ export class EditTask extends Component {
 
     handleEdit = () =>{
         const {content, type, time, points} = this.state
+        
         this.props.editTask(this.props.match.params.taskId,{
             content,
             type,
             time,
             points
-        })
+        }).then(() => this.props.history.push('/profile'))
     }
 
     handleInputs = e =>{
@@ -83,7 +84,7 @@ export class EditTask extends Component {
                         </option>
                     </select>
                 </div>
-                <Link onClick={this.handleEdit} to='/profile'><button>Confirm</button></Link>
+                <button onClick={this.handleEdit}>Confirm</button>
                 <Link to ='/profile'><button>Cancel</button></Link>
             </div>
         )
