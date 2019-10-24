@@ -1,4 +1,10 @@
 async function getTasks(req, res){
+    if (req.query.taskId){
+        const task = await req.app.get('db').tasks.getSingleTask(req.query.taskId);
+        const task1 = task[0]
+        res.status(200).json(task1);
+        return;
+    }
     const tasks = await req.app.get('db').tasks.getTasks(req.session.user.user_id);
     res.status(200).json(tasks);
 }
