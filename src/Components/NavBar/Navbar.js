@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import logoBIG from "../../Assets/logoBIG.png";
 // import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+=======
+import ourlogo from "../../Assets/ourlogo.png"
+>>>>>>> master
 import "./NavBar.scss";
 
 class Navbar extends React.Component {
@@ -33,7 +37,7 @@ class Navbar extends React.Component {
                             <img
                                 className="Blogo"
                                 alt="BigLogo"
-                                src={logoBIG}
+                                src={ourlogo}
                             />
 
                         </Link>

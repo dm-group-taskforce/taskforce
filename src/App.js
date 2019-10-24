@@ -1,13 +1,13 @@
 import React from 'react';
 import routes from './route'
-import Navbar from './Components/NavBar/Navbar';
+import SignedInNav from './Components/SignedInNav/SignedInNav';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
 
-      <Navbar/>
+      <SignedInNav/>
       {routes}
     </div>
   );

@@ -6,6 +6,8 @@ import Tasks from '../Tasks/Tasks';
 import {getUserTask} from '../../redux/reducers/taskReducer'
 import Chart from '../Chart/Chart';
 import {Link} from 'react-router-dom'
+import {deleteTask} from '../../redux/reducers/taskReducer'
+import {getChart} from '../../redux/reducers/chartReducer'
 
 export class Profile extends Component {
 
@@ -34,8 +36,10 @@ export class Profile extends Component {
         
     }
     
+    
     updateTasks = () =>{
         this.setState({allTasks: [...this.props.tasks]}, this.handleStart)
+        this.props.getChart();
     }
 
     handleStart = () => {
@@ -58,8 +62,9 @@ export class Profile extends Component {
 
        
         const dailyThings = this.state.dailyTasks.map((el,i) => (
+            <div key={i}>
             <Tasks
-            key={i}
+            
             id = {el.id}
             content = {el.content}
             type = {el.type}
@@ -67,10 +72,17 @@ export class Profile extends Component {
             points = {el.points}
             update = {this.updateTasks}
             />
+            <button onClick = {() => {
+                this.props.deleteTask(el.id).then(()=> {
+                    this.updateTasks()
+                })
+            }}>Delete</button>
+            </div>
         ))
         const weeklyThings = this.state.weeklyTasks.map((el,i) => (
+            <div key={i}>
             <Tasks
-            key={i}
+           
             id = {el.id}
             content = {el.content}
             type = {el.type}
@@ -78,10 +90,17 @@ export class Profile extends Component {
             points = {el.points}
             update = {this.updateTasks}
             />
+            <button onClick = {() => {
+                this.props.deleteTask(el.id).then(()=> {
+                    this.updateTasks()
+                })
+            }}>Delete</button>
+            </div>
         ))
         const monthlyThings = this.state.monthlyTasks.map((el,i) => (
+            <div key={i}>
             <Tasks
-            key={i}
+            
             id = {el.id}
             content = {el.content}
             type = {el.type}
@@ -89,21 +108,38 @@ export class Profile extends Component {
             points = {el.points}
             update = {this.updateTasks}
             />
+            <button onClick = {() => {
+                this.props.deleteTask(el.id).then(()=> {
+                    this.updateTasks()
+                })
+            }}>Delete</button>
+            </div>
         ))
         const completeThings = this.state.completedTasks.map((el,i) => (
+            <div key={i}>
             <Tasks
-            key={i}
+            
             id = {el.id}
             content = {el.content}
             type = {el.type}
             time = {el.time}
             points = {el.points}
+            
             />
+            <button onClick = {() => {
+                this.props.deleteTask(el.id).then(()=> {
+                    this.updateTasks()
+                })
+            }}>Delete</button>
+            </div>
         ))
             
         
         return (
             <div>
+                <h1>
+                    {this.props.experience}/{this.props.max_experience}
+                </h1>
                 <Link to='/tasks'><button>Add New Task</button></Link>
                 <section>
                     <h1>Daily</h1>
@@ -124,7 +160,7 @@ export class Profile extends Component {
                     <h1>Completed</h1>
                     {completeThings}
                 </section>
-                <Chart/>
+                <Chart />
                 
             </div>
         )
@@ -144,7 +180,9 @@ const mapStateToProps = (reduxState) => ({
 const mapDispatchToProps = {
     getRank,
     getCharacter,
-    getUserTask
+    getUserTask,
+    deleteTask,
+    getChart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)

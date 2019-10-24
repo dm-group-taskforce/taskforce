@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Navbar from '../NavBar/Navbar';
-import logoBIG from "../../Assets/logoBIG.png";
+import ourlogo from "../../Assets/ourlogo.png"
 import {logoutUser, getUser} from "../../redux/reducers/userReducer";
 import "./SignedInNav.scss";
 
@@ -46,7 +46,7 @@ class SignedInNav extends React.Component {
                         <img
                             className="Blogo"
                             alt="BigLogo"
-                            src={logoBIG}
+                            src={ourlogo}
                         />
 
                     </Link>
@@ -98,7 +98,7 @@ class SignedInNav extends React.Component {
 
 function mapStateToProps(reduxState) {
     return {
-        loggedin: reduxState.user.user.id
+        loggedin: reduxState.userReducer.user_id
     }
 }
 
