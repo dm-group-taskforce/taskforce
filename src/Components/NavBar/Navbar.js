@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoBIG from "../../Assets/logoBIG.png";
+import ourlogo from "../../Assets/ourlogo.png"
 import "./NavBar.scss";
 
 
@@ -32,7 +32,7 @@ class Navbar extends React.Component {
                             <img
                                 className="Blogo"
                                 alt="BigLogo"
-                                src={logoBIG}
+                                src={ourlogo}
                             />
 
                         </Link>
