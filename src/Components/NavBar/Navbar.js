@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logoBIG from "../../Assets/logoBIG.png";
+// import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import "./NavBar.scss";
-
 
 class Navbar extends React.Component {
 
@@ -24,7 +25,7 @@ class Navbar extends React.Component {
 
     render() {
         return (
-            <>
+            <div>
                 <nav className="tiptop">
                     <div className="top">
                         <Link to="/">
@@ -38,8 +39,8 @@ class Navbar extends React.Component {
                         </Link>
 
                         <ul className="lilnav">
-                            <Link to='/login'><li className="lis">LOGIN</li></Link>
-                            <Link to='/register'><li className="lis">REGISTER</li></Link>
+                            <Link to='/login'><Button variant="contained" color="primary">LOGIN</Button></Link>
+                            <Link to='/register'><Button variant="contained" color="primary">REGISTER</Button></Link>
                             <li className="MB">
                                 <img
                                     onClick={this.toggle}
@@ -53,19 +54,18 @@ class Navbar extends React.Component {
                     </div>
                     <div className={`${this.state.menuOpenStatus}`}>
                         <Link to="/login">
-                            <h3 id="log">LOGIN</h3> </Link>
+                            <h4 id="log">LOGIN</h4></Link>
                         <Link to="/register">
-                            <h3 id="reg">REGISTER</h3>
+                            <h4 id="reg">REGISTER</h4>
                         </Link>
                     </div>
 
 
 
                 </nav>
-            </>
+            </div>
         )
     }
 }
-
 
 export default Navbar;
