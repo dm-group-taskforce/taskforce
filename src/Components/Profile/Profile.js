@@ -9,6 +9,7 @@ import {Link} from 'react-router-dom'
 import {deleteTask} from '../../redux/reducers/taskReducer'
 import {getChart} from '../../redux/reducers/chartReducer'
 import TaskBar from '../TaskBar/TaskBar'
+import rank1 from '../../Assets/rank1.PNG';
 
 export class Profile extends Component {
 
@@ -138,6 +139,7 @@ export class Profile extends Component {
         
         return (
             <div>
+                <img src={rank1} alt='rank' style={{ width: '100px'}}/>
                 <h1>
                     {this.props.experience}/{this.props.max_experience}
                 </h1>
