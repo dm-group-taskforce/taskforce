@@ -63,8 +63,7 @@ class Register extends Component {
                             onChange={this.handleRegisterInputs}
                             margin="normal"
                             variant="filled"
-                            autoComplete="off"
-                            
+                            autoComplete="off"             
                             />
                         </div>
                         <div>
@@ -75,7 +74,7 @@ class Register extends Component {
                             onChange={this.handleRegisterInputs}
                             margin="normal"
                             variant="filled"
-                            autoComplete="off"
+                            autoComplete='off'
                             
                             />
                         </div>
