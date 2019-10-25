@@ -1,0 +1,87 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.Blogo {
+  height: 30vw;
+  width: 45vw;
+}
+
+.hamburgerB {
+  height: 6vw;
+  width: 6vw;
+  margin-top: 2vw;
+  cursor: pointer;
+}
+
+.openlist {
+  font-size: 3.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@-webkit-keyframes open {
+  from {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+  to {
+    -webkit-transform: translateX(505px);
+            transform: translateX(505px);
+  }
+}
+
+@keyframes open {
+  from {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+  to {
+    -webkit-transform: translateX(505px);
+            transform: translateX(505px);
+  }
+}
+
+@-webkit-keyframes close {
+  from {
+    -webkit-transform: translateX(575px);
+            transform: translateX(575px);
+  }
+  to {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+}
+
+@keyframes close {
+  from {
+    -webkit-transform: translateX(575px);
+            transform: translateX(575px);
+  }
+  to {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+}
+
+@media (max-width: 745px) {
+  li {
+    display: none;
+  }
+  .top-menu-open {
+    z-index: 10;
+  }
+  .top-menu-close {
+    z-index: -1;
+  }
+}
+/*# sourceMappingURL=SignedInNav.css.map */
