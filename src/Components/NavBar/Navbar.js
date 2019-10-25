@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ourlogo from "../../Assets/ourlogo.png"
+import logoatt9001 from "../../Assets/logoatt9001.png"
+import hamburgergif from "../../Assets/hamburgergif.gif"
 import "./NavBar.scss";
 
 
@@ -25,6 +26,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <>
+            <div className="thetop">
                 <nav className="tiptop">
                     <div className="top">
                         <Link to="/">
@@ -32,7 +34,7 @@ class Navbar extends React.Component {
                             <img
                                 className="Blogo"
                                 alt="BigLogo"
-                                src={ourlogo}
+                                src={logoatt9001}
                             />
 
                         </Link>
@@ -45,7 +47,7 @@ class Navbar extends React.Component {
                                     onClick={this.toggle}
                                     className="hamburgerB"
                                     alt="hamburger"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" />
+                                    src={hamburgergif} />
 
                             </li>
                         </ul>
@@ -62,6 +64,7 @@ class Navbar extends React.Component {
 
 
                 </nav>
+                </div>
             </>
         )
     }
