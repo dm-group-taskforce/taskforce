@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
+import regContent from '../../Assets/aliencollege.png';
+import './Register.scss';
 import { connect } from 'react-redux'
 import {registerUser} from '../../redux/reducers/userReducer'
 import {Redirect} from 'react-router-dom'
+import TextField from "@material-ui/core/TextField";
+import Button from '@material-ui/core/Button';
+
 
 class Register extends Component {
 
@@ -17,52 +22,108 @@ class Register extends Component {
         }
     }
 
-    handleInputs = e =>{
+    handleRegisterInputs = e => {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    handleRegister = () =>{
+    handleRegister = (e) => {
+        e.preventDefault();
         const {username, password, first_name, last_name, email} = this.state;
-        this.props.registerUser({
+        const { registerUser } = this.props;
+        registerUser({
             username,
             password,
             first_name,
             last_name,
             email
-        })
+        });
     }
 
     render() {
-        if(this.props.redirect === true && this.props.user_id !== null){
+        if(this.props.redirect === true && this.props.user_id !== null) {
             return <Redirect to='/profile'/>
         }
         return (
+            <section className="intro-reg-page">
+            <div className="outer-container">
+                <div className="register-container">
+                    <div className="content-box">
+                        <img src="https://docs.google.com/drawings/d/e/2PACX-1vQ0ytGUBVJyZfA-0ol_DtaoGOJnYTocjCasJ7P9qneHhmwyX71kHWZb9U4nbVS3UxEMGY7ule37KCBY/pub?w=357&amp;h=158"/>
+                        <h1>Motivate yourself to achieve your goals.</h1>
+                        <p>It's time to have fun when you get things done! Join TaskForce and improve your life one task at a time.</p>
+                    </div>
 
-            <div className="register-container">
-                <section>
-                    <h1>Username:</h1>
-                    <input name='username' onChange={this.handleInputs}/>
-                </section>
-                <section>
-                    <h1>First Name:</h1>
-                    <input name='first_name' onChange={this.handleInputs}/>
-                </section>
-                <section>
-                    <h1>Last Name:</h1>
-                    <input name='last_name' onChange={this.handleInputs}/>
-                </section>
-                <section>
-                    <h1>Email: </h1>
-                    <input name='email' onChange={this.handleInputs}/>
-                </section>
-                <section>
-                    <h1>Password: </h1>
-                    <input name='password' onChange={this.handleInputs}/>
-                </section>
-                <div className="register-btn">
-                    <button onClick={this.handleRegister}>Register</button> 
+                    <div className="register-box">
+                        <h1 className="welcome-message">Welcome to Task Force, <br/> please sign up below!</h1>
+                        <div>
+                            <TextField 
+                            name='username' 
+                            label='Username'
+                            className='register-input'
+                            onChange={this.handleRegisterInputs}
+                            margin="normal"
+                            variant="filled"
+                            autoComplete="off"             
+                            />
+                        </div>
+                        <div>
+                            <TextField 
+                            name='first_name'
+                            label='First Name'
+                            className='register-input'
+                            onChange={this.handleRegisterInputs}
+                            margin="normal"
+                            variant="filled"
+                            autoComplete='off'
+                            
+                            />
+                        </div>
+                        <div>
+                            <TextField 
+                            name='last_name'
+                            type='last_name' 
+                            label='Last Name'
+                            className='register-input'
+                            onChange={this.handleRegisterInputs}
+                            margin="normal"
+                            variant="filled"
+                            autoComplete="off"
+                            />
+                        </div>
+                        <div>
+                            <TextField 
+                            name='email' 
+                            type='email'
+                            label='Email'
+                            className='register-input'
+                            onChange={this.handleRegisterInputs}
+                            margin="normal"
+                            variant="filled"
+                            autoComplete="off"
+                            />
+                        </div>
+                        <div>
+                            <TextField 
+                            name='password' 
+                            label='Password'
+                            className='register-input'
+                            onChange={this.handleRegisterInputs}
+                            margin="normal"
+                            variant="filled"
+                            autoComplete="off"
+                            />
+                        </div>
+                        <div className="register-btn">
+                            <Button 
+                            variant="contained" 
+                            color="primary" 
+                            type="submit" 
+                            onClick={this.handleRegister}>Register</Button> 
+                        </div>
+                    </div>
                 </div>
             </div>
+            </section>
         )
     }
 }

@@ -1,0 +1,68 @@
+// .intro-reg-page {
+//     box-sizing: border-box;
+//     margin: 0;
+// }
+
+// .outer-container {
+//     width: 100vw;
+//     padding-right: 12px;
+//     padding-left: 12px;
+//     margin-right: auto;
+//     margin-left: auto;
+// }
+
+.register-container {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Varela Round', sans-serif;
+    // margin-top: 20vh;
+}
+
+// left box
+.content-box {
+    width: 35vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 15vw;
+    margin-top: 20vh;
+    // border: 2px solid white;
+    // border-radius: 5px;
+    // background: white;
+}
+.content-box h1 {
+    font-size: 3vw;
+}
+.content-box p {
+    margin-top: 1.5vw;
+}
+// right box
+.register-box {
+    width: 32vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: white;
+}
+.register-box h1 {
+    font-size: 2vw;
+}
+
+.register-btn {
+    background-color: #3ccfcf;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    max-width: 100%;
+    transition: all .12s cubic-bezier(.47,0,.745,.715);
+    width: auto;
+}

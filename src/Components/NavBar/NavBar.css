@@ -1,0 +1,181 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.Blogo {
+  height: 30vw;
+  width: 45vw;
+  margin-left: 5vw;
+}
+
+.hamburgerB {
+  height: 6vw;
+  width: 6vw;
+  margin-top: 2vw;
+  cursor: pointer;
+}
+
+.openlist {
+  font-size: 3.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top {
+  height: 10vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  border: none;
+}
+
+a:link {
+  text-decoration: none;
+  width: 10vw;
+}
+
+.lilnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25%;
+  width: 18vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: bottom;
+  margin-top: 3.5vw;
+  margin-right: 5vw;
+}
+
+.lis {
+  width: 75%;
+  height: 100%;
+  font-size: 1.5vw;
+  color: green;
+  margin-right: -5vw;
+}
+
+.top, ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+}
+
+div.top-menu, .top-menu-open, .top-menu-close {
+  width: 32vw;
+  height: 32vw;
+  position: fixed;
+  top: 0;
+  right: 31.5rem;
+  -webkit-transform: translateX(1610px);
+          transform: translateX(1610px);
+}
+
+.top-menu-open {
+  display: block;
+  -webkit-animation-name: open;
+          animation-name: open;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  margin-top: 13vw;
+  background: gray;
+}
+
+.top-menu-close {
+  display: block;
+  -webkit-animation-name: close;
+          animation-name: close;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  margin-top: 13vw;
+}
+
+.MB {
+  display: none;
+}
+
+@-webkit-keyframes open {
+  from {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+  to {
+    -webkit-transform: translateX(505px);
+            transform: translateX(505px);
+  }
+}
+
+@keyframes open {
+  from {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+  to {
+    -webkit-transform: translateX(505px);
+            transform: translateX(505px);
+  }
+}
+
+@-webkit-keyframes close {
+  from {
+    -webkit-transform: translateX(575px);
+            transform: translateX(575px);
+  }
+  to {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+}
+
+@keyframes close {
+  from {
+    -webkit-transform: translateX(575px);
+            transform: translateX(575px);
+  }
+  to {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+}
+
+@media (max-width: 745px) {
+  li {
+    display: none;
+  }
+  .MB {
+    display: block;
+  }
+  .top-menu-open {
+    z-index: 10;
+  }
+  .top-menu-close {
+    z-index: -1;
+  }
+}
+/*# sourceMappingURL=NavBar.css.map */

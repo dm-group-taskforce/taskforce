@@ -21,6 +21,7 @@ async function editTask(req, res){
     const {user_id} = req.session.user;
     const {content, time, type, points} = req.body;
     if (time === 'completed'){
+        
         switch(type){
             case 'health':
                 await req.app.get('db').chart.editChartData(1,0,0,0,0,0, user_id)

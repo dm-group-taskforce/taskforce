@@ -1,0 +1,71 @@
+.register-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.content-box {
+  width: 35vw;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin-left: 15vw;
+  margin-top: 20vh;
+}
+
+.content-box h1 {
+  font-size: 3vw;
+}
+
+.content-box p {
+  margin-top: 1.5vw;
+}
+
+.register-box {
+  width: 32vw;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  background: white;
+}
+
+.register-box h1 {
+  font-size: 2vw;
+}
+
+.register-btn {
+  background-color: #3ccfcf;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  max-width: 100%;
+  -webkit-transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: all 0.12s cubic-bezier(0.47, 0, 0.745, 0.715);
+  width: auto;
+}
+/*# sourceMappingURL=Register.css.map */

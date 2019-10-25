@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logoatt9001 from "../../Assets/logoatt9001.png"
 import hamburgergif from "../../Assets/hamburgergif.gif"
+import Button from '@material-ui/core/Button';
+import ourlogo from "../../Assets/ourlogo.png"
 import "./NavBar.scss";
-
 
 class Navbar extends React.Component {
 
@@ -40,8 +41,8 @@ class Navbar extends React.Component {
                         </Link>
 
                         <ul className="lilnav">
-                            <Link to='/login'><li className="lis">LOGIN</li></Link>
-                            <Link to='/register'><li className="lis">REGISTER</li></Link>
+                            <Link to='/login'><Button variant="contained" color="primary">LOGIN</Button></Link>
+                            <Link to='/register'><Button variant="contained" color="primary">REGISTER</Button></Link>
                             <li className="MB">
                                 <img
                                     onClick={this.toggle}
@@ -55,9 +56,9 @@ class Navbar extends React.Component {
                     </div>
                     <div className={`${this.state.menuOpenStatus}`}>
                         <Link to="/login">
-                            <h3 id="log">LOGIN</h3> </Link>
+                            <h4 id="log">LOGIN</h4></Link>
                         <Link to="/register">
-                            <h3 id="reg">REGISTER</h3>
+                            <h4 id="reg">REGISTER</h4>
                         </Link>
                     </div>
 
@@ -69,6 +70,5 @@ class Navbar extends React.Component {
         )
     }
 }
-
 
 export default Navbar;

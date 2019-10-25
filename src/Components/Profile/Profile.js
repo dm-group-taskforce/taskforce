@@ -8,6 +8,7 @@ import Chart from '../Chart/Chart';
 import {Link} from 'react-router-dom'
 import {deleteTask} from '../../redux/reducers/taskReducer'
 import {getChart} from '../../redux/reducers/chartReducer'
+import TaskBar from '../TaskBar/TaskBar'
 
 export class Profile extends Component {
 
@@ -137,6 +138,10 @@ export class Profile extends Component {
         
         return (
             <div>
+                <h1>
+                    {this.props.experience}/{this.props.max_experience}
+                </h1>
+                <TaskBar/>
                 <Link to='/tasks'><button>Add New Task</button></Link>
                 <section>
                     <h1>Daily</h1>
