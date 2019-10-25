@@ -4,9 +4,10 @@ body {
 }
 
 .Blogo {
-  height: 30vw;
-  width: 45vw;
-  margin-left: 5vw;
+  height: 10vw;
+  width: 25vw;
+  margin-top: 20px;
+  margin-left: 2vw;
 }
 
 .hamburgerB {
