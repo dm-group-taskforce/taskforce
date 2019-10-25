@@ -46,7 +46,6 @@ class Navbar extends React.Component {
                                     className="hamburgerB"
                                     alt="hamburger"
                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" />
-
                             </li>
                         </ul>
 
