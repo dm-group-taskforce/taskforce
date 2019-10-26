@@ -26,7 +26,7 @@ export default function Reducer(state = initialState, action){
                         hoverBackgroundColor: ['red', 'blue', 'pink', 'green', 'purple', 'orange']
                     }]
                 }
-                console.log('hit')
+                
                 let arr = [];
                 for ( let item in payload.data[0]){
                     arr.push(payload.data[0][item])
