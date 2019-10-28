@@ -1,4 +1,4 @@
-.add-task-btn, .complete-task-btn, .cancel-task-btn {
+.add-task-btn, .yes-btn, .no-btn {
   background: #72c934;
   color: white;
   height: 44px;
@@ -68,25 +68,4 @@
   margin: 1px;
   cursor: pointer;
 }
-
-.task-content {
-  width: 30vw;
-  display: inline-block;
-  width: 100%;
-  height: calc(1.5em + .75rem + 2px);
-  padding: .375rem 1.75rem .375rem .75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
-  word-wrap: normal;
-  text-transform: none;
-  margin: 0;
-  font-family: inherit;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-/*# sourceMappingURL=NewTask.css.map */
+/*# sourceMappingURL=TaskConfirmation.css.map */

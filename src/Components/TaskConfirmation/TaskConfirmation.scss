@@ -1,0 +1,9 @@
+@import '../../styles/components';
+
+.yes-btn {
+    @extend .add-task-btn;
+}
+
+.no-btn {
+    @extend .add-task-btn;
+}

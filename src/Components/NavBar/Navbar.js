@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import logoatt9001 from "../../Assets/logoatt9001.png"
 import hamburgergif from "../../Assets/hamburgergif.gif"
 import Button from '@material-ui/core/Button';
-import ourlogo from "../../Assets/ourlogo.png"
 import "./NavBar.scss";
 
 class Navbar extends React.Component {
@@ -25,6 +24,10 @@ class Navbar extends React.Component {
 
 
     render() {
+        let butts = {
+            backgroundColor: '#13e6d8',
+            color: 'black'
+        }
         return (
             <>
             <div className="thetop">
@@ -41,18 +44,27 @@ class Navbar extends React.Component {
                         </Link>
 
                         <ul className="lilnav">
-                            <Link to='/login'><Button variant="contained" color="primary">LOGIN</Button></Link>
-                            <Link to='/register'><Button variant="contained" color="primary">REGISTER</Button></Link>
+                            <li className="lis">
+                                <Link  to='/login'>
+                                    <Button 
+                                    style={butts}
+                                    variant="contained"
+                                    color= "primary"
+                                >LOGIN</Button>
+                                </Link>
+                                </li>
+                            <li className="lis">
+                                <Link to='/register'>
+                                    <Button 
+                                    style={butts}
+                                    variant="contained" color="primary">REGISTER</Button></Link>
+                                </li>
                             <li className="MB">
                                 <img
                                     onClick={this.toggle}
                                     className="hamburgerB"
                                     alt="hamburger"
                                     src={hamburgergif} />
-<<<<<<< HEAD
-
-=======
->>>>>>> 9888c24d99dcc1fad07e5fa3a2f4a5a8d06427fc
                             </li>
                         </ul>
 

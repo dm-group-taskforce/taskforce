@@ -1,4 +1,4 @@
-// @import '../../';
+@import '../../styles/components';
 
 .task-content {
     width: 30vw;
@@ -18,5 +18,13 @@
     margin: 0;
     font-family: inherit;
     box-sizing: border-box;
+}
+
+.complete-task-btn {
+    @extend .add-task-btn;
+}
+
+.cancel-task-btn {
+    @extend .add-task-btn;
 }
 

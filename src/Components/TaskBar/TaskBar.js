@@ -36,9 +36,9 @@ export class TaskBar extends Component {
         // }})
         //this.setState({exp: this.state.exp + 100});
         let ana = new TimelineMax()
-        console.log(newExp)
+        
         ana.to(".theexp", 2, {width: (newExp * 10) / 10 + "%"})
-        console.log( (this.state.experience + 100) / 10 + "%")
+        
     }
 
 
