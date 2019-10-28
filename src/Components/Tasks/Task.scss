@@ -1,0 +1,9 @@
+@import '../../styles/components';
+
+.complete-task-btn {
+    @extend .complete-task-btn;
+}
+
+.edit-task-btn {
+    @extend .edit-task-btn;
+}

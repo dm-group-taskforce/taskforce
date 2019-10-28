@@ -105,7 +105,8 @@ class NewTask extends React.Component {
                 <button 
                 className="complete-task-btn" 
                 onClick={this.handleAddTask}>Add Task</button>
-                <Link to='/profile'><button>Cancel</button></Link>
+                <Link to='/profile'>
+                <button className="cancel-task-btn">Cancel</button></Link>
                 {this.state.showCon === true ?
                 <TaskConfirmation function={this.toggleShowCon}/>:
                 null

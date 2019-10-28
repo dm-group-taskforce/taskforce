@@ -22,9 +22,6 @@ export class Tasks extends Component {
         
     }
 
-   
-
-
     render() {
         return (
             <div>
@@ -32,10 +29,25 @@ export class Tasks extends Component {
                 {this.props.type}
                 {this.props.points}
                 {this.props.time !== 'completed'? 
-                <>
-                <Link to={`/tasks/${this.props.id}`}><button>Edit</button></Link>
-                <button onClick={this.completeTask}>Complete Task</button>
-                </>:
+                <div>
+                <Link to={`/tasks/${this.props.id}`}>
+                <button
+                className="edit-task-btn"
+                >&#9998;</button></Link>
+                
+                <button 
+                className="complete-task-btn"
+                onClick={this.completeTask}>&#x2713;</button>
+
+                <button 
+                className="delete-task-btn"
+                onClick = {() => {
+                    this.props.delete(this.props.id).then(()=> {
+                        this.props.update()
+                    })
+                }}>&#x2715;</button>
+
+                </div>:
                 null
             
                 }

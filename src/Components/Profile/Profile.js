@@ -12,7 +12,7 @@ import TaskBar from '../TaskBar/TaskBar'
 import './Profile.scss'
 import ranks from '../ranks';
 
-export class Profile extends Component {
+class Profile extends Component {
 
     constructor(){
         super();
@@ -33,7 +33,7 @@ export class Profile extends Component {
             this.setState({allTasks: [...this.props.tasks]}, this.handleStart)
         })
         // Axios.get('/task/get').then(response => {
-            
+        
         //     this.setState({allTasks: response.data}, this.handleStart)
         // })
         
@@ -41,8 +41,7 @@ export class Profile extends Component {
         this.props.getCharacter();
         
     }
-    
-    
+
     updateTasks = () =>{
         this.setState({allTasks: [...this.props.tasks]}, this.handleStart)
         this.props.getChart();
@@ -81,77 +80,76 @@ export class Profile extends Component {
                 img: ranks[this.state.index + 1].img
             }).then(() => {this.initializeRank()})
         }
-       
+
         const dailyThings = this.state.dailyTasks.map((el,i) => (
-            <div key={i}>
+            <div 
+            className="daily-task-card"
+            key={i}>
+
             <Tasks
-            
             id = {el.id}
             content = {el.content}
             type = {el.type}
             time = {el.time}
             points = {el.points}
             update = {this.updateTasks}
+            delete = {this.props.deleteTask}
             />
-            <button onClick = {() => {
-                this.props.deleteTask(el.id).then(()=> {
-                    this.updateTasks()
-                })
-            }}>Delete</button>
             </div>
         ))
         const weeklyThings = this.state.weeklyTasks.map((el,i) => (
-            <div key={i}>
-            <Tasks
-           
+            <div 
+            className="weekly-task-card"
+            key={i}>
+            
+            <Tasks           
             id = {el.id}
             content = {el.content}
             type = {el.type}
             time = {el.time}
             points = {el.points}
             update = {this.updateTasks}
+            delete = {this.props.deleteTask}
             />
-            <button onClick = {() => {
-                this.props.deleteTask(el.id).then(()=> {
-                    this.updateTasks()
-                })
-            }}>Delete</button>
             </div>
         ))
         const monthlyThings = this.state.monthlyTasks.map((el,i) => (
-            <div key={i}>
-            <Tasks
+            <div 
+            className="monthly-task-card"
+            key={i}>
             
+            <Tasks
             id = {el.id}
             content = {el.content}
             type = {el.type}
             time = {el.time}
             points = {el.points}
             update = {this.updateTasks}
+            delete = {this.props.deleteTask}
             />
-            <button onClick = {() => {
-                this.props.deleteTask(el.id).then(()=> {
-                    this.updateTasks()
-                })
-            }}>Delete</button>
             </div>
         ))
         const completeThings = this.state.completedTasks.map((el,i) => (
-            <div key={i}>
-            <Tasks
+            <div 
+            className="complete-task-card"
+            key={i}>
             
+            <Tasks
             id = {el.id}
             content = {el.content}
             type = {el.type}
             time = {el.time}
             points = {el.points}
-            
             />
-            <button onClick = {() => {
-                this.props.deleteTask(el.id).then(()=> {
-                    this.updateTasks()
-                })
-            }}>Delete</button>
+            <div>
+                <button 
+                className="delete-task-btn"
+                onClick = {() => {
+                    this.props.deleteTask(el.id).then(()=> {
+                        this.updateTasks()
+                    })
+                }}>&#x2715;</button>
+            </div>
             </div>
         ))
             
@@ -162,26 +160,28 @@ export class Profile extends Component {
                 <h1>To next rank: {toNext}</h1>
                 <TaskBar/>
                 <Link to='/tasks'><button className="add-task-btn">Add New Task</button></Link>
-                <section>
-                    <h1>Daily</h1>
-                    {dailyThings}
-                </section>
+                <div className="task-period-container">
+                    <section className="daily-section">
+                        <h1>Daily</h1>
+                        {dailyThings}
+                    </section>
 
-                <section>
-                    <h1>Weekly</h1>
-                    {weeklyThings}
-                </section>
+                    <section className="weekly-section">
+                        <h1>Weekly</h1>
+                        {weeklyThings}
+                    </section>
 
-                <section>
-                    <h1>Monthly</h1>
-                    {monthlyThings}
-                </section>
+                    <section className="monthly-section">
+                        <h1>Monthly</h1>
+                        {monthlyThings}
+                    </section>
 
-                <section>
-                    <h1>Completed</h1>
-                    {completeThings}
-                </section>
-                
+                    <section className="completed-section">
+                        <h1>Completed</h1>
+                        {completeThings}
+                    </section>
+                </div>
+
                 <div className="chart-container">
                     <Chart />
                 </div>
