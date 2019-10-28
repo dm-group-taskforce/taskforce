@@ -94,6 +94,13 @@ module.exports = {
         req.session.destroy();
         return res.status(200).json("You have logged out!")
     },
+        updateUser: async(req,res) => {
+        const {username, first_name, last_name, email} = req.body
+        const db = req.app.get('db');
+        const {user_id} =req.session.user
+        const updatedUser = await db.authorization.editUser(username, first_name, last_name, email, user_id)
+        res.status(200).json(updatedUser[0])
+    },
     deleteUser: (req,res) => {
 
     }
