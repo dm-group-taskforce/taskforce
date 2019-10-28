@@ -9,6 +9,7 @@ import {Link} from 'react-router-dom'
 import {deleteTask} from '../../redux/reducers/taskReducer'
 import {getChart} from '../../redux/reducers/chartReducer'
 import TaskBar from '../TaskBar/TaskBar'
+import './Profile.scss'
 import ranks from '../ranks';
 
 export class Profile extends Component {
@@ -160,7 +161,7 @@ export class Profile extends Component {
                 <img src={this.state.img} alt='rank' style={{ width: '100px'}}/>
                 <h1>To next rank: {toNext}</h1>
                 <TaskBar/>
-                <Link to='/tasks'><button>Add New Task</button></Link>
+                <Link to='/tasks'><button className="add-task-btn">Add New Task</button></Link>
                 <section>
                     <h1>Daily</h1>
                     {dailyThings}
@@ -180,7 +181,10 @@ export class Profile extends Component {
                     <h1>Completed</h1>
                     {completeThings}
                 </section>
-                <Chart />
+                
+                <div className="chart-container">
+                    <Chart />
+                </div>
                 
             </div>
         )
