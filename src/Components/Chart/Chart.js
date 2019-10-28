@@ -19,7 +19,7 @@ class Chart extends Component {
     }
 
     render() {
-        console.log('string')
+       
         return (
             <div className="chart-container" >
                 <Pie

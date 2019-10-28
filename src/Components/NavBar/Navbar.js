@@ -65,7 +65,6 @@ class Navbar extends React.Component {
                                     className="hamburgerB"
                                     alt="hamburger"
                                     src={hamburgergif} />
-
                             </li>
                         </ul>
 
