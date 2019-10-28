@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "ACAA,AAAA,IAAI,CAAA;EACA,UAAU,EAAE,UAAU;CACzB",
     "sources": [
-        "Account.scss"
+        "Account.scss",
+        "../../app.scss"
     ],
     "names": [],
     "file": "Account.css"

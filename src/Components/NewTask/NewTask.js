@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {getUserTask, addTask, editTask, deleteTask} from '../../redux/reducers/taskReducer';
 import {Link} from 'react-router-dom'
 import TaskConfirmation from '../TaskConfirmation/TaskConfirmation';
+import './NewTask.scss'
 
 class NewTask extends React.Component {
 
@@ -48,7 +49,11 @@ class NewTask extends React.Component {
             <main>
                 <div>
                     <h1>What to do:</h1>
-                    <input name='content' onChange={this.handleInputs} placeholder='content'/>
+                    <input 
+                    className="task-content"
+                    name='content' 
+                    onChange={this.handleInputs} 
+                    placeholder='content'/>
                 </div>
                 <div>
                     <select name='type' onChange={this.handleInputs}>
@@ -85,7 +90,9 @@ class NewTask extends React.Component {
                         </option>
                     </select>
                 </div>
-                <button onClick={this.handleAddTask}>Add Task</button>
+                <button 
+                className="complete-task-btn" 
+                onClick={this.handleAddTask}>Add Task</button>
                 <Link to='/profile'><button>Cancel</button></Link>
                 {this.state.showCon === true ?
                 <TaskConfirmation function={this.toggleShowCon}/>:

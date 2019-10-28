@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import './Login.scss';
 import { connect } from 'react-redux'
 import {loginUser} from '../../redux/reducers/userReducer'
 import {Redirect} from 'react-router-dom'
+import TextField from "@material-ui/core/TextField";
+import Button from '@material-ui/core/Button';
 
 export class Login extends Component {
 
@@ -27,16 +30,36 @@ export class Login extends Component {
                 return <Redirect to='/profile'/>
             }
         return (
-            <div>
-                <section>
-                    <h1>Username</h1>
-                    <input name='username' onChange={this.handleInputs}/>
-                </section>
-                <section>
-                    <h1>Password</h1>
-                    <input name='password' onChange={this.handleInputs}/>
-                </section>
-                <button onClick={this.handleLogin}>Login</button>
+            <div className="login-container">
+                <div>
+                    <TextField 
+                    name='username' 
+                    label='Username'
+                    className='username-input'
+                    onChange={this.handleInputs}
+                    margin='normal'
+                    variant='filled'
+                    autoComplete='off'
+                    />
+                </div>
+                <div>
+                    <TextField 
+                    name='password' 
+                    label='Password'
+                    className='password-input'
+                    onChange={this.handleInputs}
+                    margin='normal'
+                    variant='filled'
+                    autoComplete='off'
+                    />
+                </div>
+                <div>
+                <Button 
+                variant='contained'
+                color='primary'
+                type='submit'
+                onClick={this.handleLogin}>Login</Button>
+                </div>
             </div>
         )
     }

@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Navbar from '../NavBar/Navbar';
-import ourlogo from "../../Assets/ourlogo.png"
+import logoatt9001 from "../../Assets/logoatt9001.png"
+import hamburgergif from "../../Assets/hamburgergif.gif"
 import {logoutUser, getUser} from "../../redux/reducers/userReducer";
 import "./SignedInNav.scss";
 
@@ -40,13 +41,13 @@ class SignedInNav extends React.Component {
 
         return (
             <>
-                <div>
+                <div className="thetop">
                     <Link to="/">
 
                         <img
                             className="Blogo"
                             alt="BigLogo"
-                            src={ourlogo}
+                            src={logoatt9001}
                         />
 
                     </Link>
@@ -62,7 +63,7 @@ class SignedInNav extends React.Component {
                                 onClick={this.toggle}
                                 className="hamburgerB"
                                 alt="hamburger"
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" />
+                                src={hamburgergif} />
 
                         </li>
                     </ul>
