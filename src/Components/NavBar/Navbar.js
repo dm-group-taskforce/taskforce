@@ -49,7 +49,10 @@ class Navbar extends React.Component {
                                     className="hamburgerB"
                                     alt="hamburger"
                                     src={hamburgergif} />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9888c24d99dcc1fad07e5fa3a2f4a5a8d06427fc
                             </li>
                         </ul>
 
