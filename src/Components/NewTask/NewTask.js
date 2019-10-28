@@ -25,6 +25,18 @@ class NewTask extends React.Component {
         this.setState({showCon: !this.state.showCon})
     }
 
+    determinePoints = ()=>{
+        const {time} = this.state;
+        if (time === 'daily'){
+            return 5;
+        }
+        else if (time === 'weekly'){
+            return 10;
+        }
+        else if (time === 'monthly'){
+            return 15;
+        }
+    }
     handleAddTask = () => {
         const {addTask} = this.props;
         const {content, type, time} = this.state;
@@ -32,7 +44,7 @@ class NewTask extends React.Component {
             content,
             type,
             time,
-            points: 10
+            points: this.determinePoints()
         })
         this.toggleShowCon();
         

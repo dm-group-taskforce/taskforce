@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {getRank} from '../../redux/reducers/rankReducer'
+import {getRank, editRank} from '../../redux/reducers/rankReducer'
 import {getCharacter} from '../../redux/reducers/characterReducer'
 import Tasks from '../Tasks/Tasks';
 import {getUserTask} from '../../redux/reducers/taskReducer'
@@ -10,6 +10,7 @@ import {deleteTask} from '../../redux/reducers/taskReducer'
 import {getChart} from '../../redux/reducers/chartReducer'
 import TaskBar from '../TaskBar/TaskBar'
 import './Profile.scss'
+import ranks from '../ranks';
 
 export class Profile extends Component {
 
@@ -20,7 +21,10 @@ export class Profile extends Component {
             dailyTasks: [],
             weeklyTasks: [],
             monthlyTasks: [],
-            completedTasks: []
+            completedTasks: [],
+            img: '',
+            neededExp: 0,
+            index: 0
         }
     }
 
@@ -33,7 +37,7 @@ export class Profile extends Component {
         //     this.setState({allTasks: response.data}, this.handleStart)
         // })
         
-        this.props.getRank();
+        this.props.getRank().then(()=>{this.initializeRank()});
         this.props.getCharacter();
         
     }
@@ -42,6 +46,15 @@ export class Profile extends Component {
     updateTasks = () =>{
         this.setState({allTasks: [...this.props.tasks]}, this.handleStart)
         this.props.getChart();
+    }
+
+    initializeRank = () =>{
+        for (let i = 0; i < ranks.length; i++){
+            if (ranks[i].abbreviation.toLowerCase() === this.props.abbreviation.toLowerCase()){
+                
+                this.setState({img: ranks[i].img, neededExp: ranks[i].expNeed, index: i})
+            }
+        }
     }
 
     handleStart = () => {
@@ -61,7 +74,13 @@ export class Profile extends Component {
     }
 
     render() {
-
+        let toNext = this.state.neededExp - this.props.experience;
+        if (toNext <= 0){
+            this.props.editRank({
+                abbreviation: ranks[this.state.index + 1].abbreviation,
+                img: ranks[this.state.index + 1].img
+            }).then(() => {this.initializeRank()})
+        }
        
         const dailyThings = this.state.dailyTasks.map((el,i) => (
             <div key={i}>
@@ -139,9 +158,8 @@ export class Profile extends Component {
         
         return (
             <div>
-                <h1>
-                    {this.props.experience}/{this.props.max_experience}
-                </h1>
+                <img src={this.state.img} alt='rank' style={{ width: '100px'}}/>
+                <h1>To next rank: {toNext}</h1>
                 <TaskBar/>
                 <Link to='/tasks'><button className="add-task-btn">Add New Task</button></Link>
                 <section>
@@ -188,7 +206,8 @@ const mapDispatchToProps = {
     getCharacter,
     getUserTask,
     deleteTask,
-    getChart
+    getChart,
+    editRank
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)

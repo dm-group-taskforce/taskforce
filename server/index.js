@@ -5,7 +5,7 @@ const massive = require("massive");
 const session = require("express-session");
 
 // Controllers
-const {getSession, login, logout, register, deleteUser} = require('./Controllers/authController')
+const {getSession, login, logout, register, deleteUser, updateUser} = require('./Controllers/authController')
 const {getCharacter, updateCharacter} = require('./Controllers/characterController')
 const {getRank, editRank} = require('./Controllers/rankController')
 const {getTasks, addTask, editTask, deleteTask} = require('./Controllers/taskController')
@@ -37,6 +37,7 @@ app.post('/auth/login', login);
 app.post('/auth/logout', logout);
 app.post('/auth/register', register);
 app.delete('/auth/delete', deleteUser);
+app.put('/auth/edit', updateUser)
 
 // Character
 app.get('/character/get', getCharacter);

@@ -16,6 +16,7 @@ const LOGIN_USER = 'LOGIN_USER';
 const LOGOUT_USER = 'LOGOUT_USER';
 const DELETE_USER = 'DELETE_USER';
 const GET_USER = 'GET_USER'; 
+const UPDATE_USER = 'UPDATE_USER'
 
 
 export function registerUser(newUser) {
@@ -37,6 +38,12 @@ export function logoutUser() {
 
    return {
       type: LOGOUT_USER
+   }
+}
+export function updateUser(editUser) {
+   return {
+      type: UPDATE_USER,
+      payload: Axios.put('/auth/edit', editUser)
    }
 }
 
@@ -91,6 +98,16 @@ export default function reducer(state = initialState, action) {
             last_name: '',
             redirect: false
          };
+      case `${UPDATE_USER}_FULFILLED`:
+      console.log(payload)
+      return {
+            ...state,
+            username: payload.data.username,
+            email: payload.data.email,
+            first_name: payload.data.first_name,
+            last_name: payload.data.last_name,
+            redirect: false
+      }
       case DELETE_USER:
             return {
                user_id: null,
