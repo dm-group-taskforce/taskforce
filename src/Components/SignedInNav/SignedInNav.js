@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Navbar from '../NavBar/Navbar';
 import logoatt9001 from "../../Assets/logoatt9001.png"
 import hamburgergif from "../../Assets/hamburgergif.gif"
+import Button from '@material-ui/core/Button';
 import {logoutUser, getUser} from "../../redux/reducers/userReducer";
 import "./SignedInNav.scss";
 
@@ -38,6 +39,10 @@ class SignedInNav extends React.Component {
                 <Navbar />
             )
         }
+                let butts = {
+            backgroundColor: '#13e6d8',
+            color: 'black'
+        }
 
         return (
             <>
@@ -52,12 +57,34 @@ class SignedInNav extends React.Component {
 
                     </Link>
                     <ul>
-                        <Link to='/profile'><li>PROFILE</li></Link>
-                        <Link to='/games'><li>GAMES</li></Link>
-                        <Link to='/account'><li>ACCOUNT</li></Link>
-                        <Link to="/"> <li
-                            onClick={this.handleClickLo}>LOG OUT</li>
-                        </Link>
+                        <Link to='/profile'>                                    
+                                    <Button 
+                                    style={butts}
+                                    variant="contained"
+                                    color= "primary"
+                                    >PROFILE</Button>
+                            </Link>
+                        <Link to='/games'>       
+                                    <Button 
+                                    style={butts}
+                                    variant="contained"
+                                    color= "primary"
+                                    >GAMES</Button>
+                            </Link>
+                        <Link to='/account'>                                    <Button 
+                                    style={butts}
+                                    variant="contained"
+                                    color= "primary"
+                                    >ACCOUNT</Button>
+                            </Link>
+                        <Link to="/">    
+                                    <Button 
+                                    onClick={this.handleClickLo}
+                                    style={butts}
+                                    variant="contained"
+                                    color= "primary"
+                                    >LOG OUT</Button>
+                            </Link> 
                         <li className="MB">
                             <img
                                 onClick={this.toggle}

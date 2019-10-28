@@ -2,14 +2,17 @@
 
 .thetop{
     background-image: url(../../Assets/spacepixel.png);
+    // background-image: url(../../Assets/spacegif.gif);
+    // background-image: url(../../Assets/crazyalien.gif);
+    // background-image: url(../../Assets/rickandmorty.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     z-index: 5;
 }
 .Blogo {
-    height: 30vw;
-    width: 45vw;
+    height: 45vw;
+    width: 60vw;
     margin-left: 5vw;
 }
 .hamburgerB {
@@ -49,10 +52,11 @@ a:link{
 .lis {
     width: 75%;
     height: 100%;    
-    font-size: 1.5vw;
-    color: green;
     // background-color: gray;
     margin-right: -5vw;
+}
+.butts{
+    background-color: orange;
 }
 .top, ul {
     display: flex;
