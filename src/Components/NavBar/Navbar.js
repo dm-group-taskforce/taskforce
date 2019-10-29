@@ -26,7 +26,10 @@ class Navbar extends React.Component {
     render() {
         let butts = {
             backgroundColor: '#13e6d8',
-            color: 'black'
+            color: 'black',
+            height: '2vw',
+            width: '8vw',
+            fontSize: '125%'
         }
         return (
             <>
