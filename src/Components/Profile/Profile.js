@@ -158,29 +158,53 @@ class Profile extends Component {
         return (
             <div>
                 <img src={this.state.img} alt='rank' style={{ width: '100px'}}/>
-                <h1>To next rank: {toNext}</h1>
+                <div className="title-rank">
+                    <h1>To next rank: {toNext}</h1>
+                </div>
                 <TaskBar/>
                 <Link to='/tasks'><button className="add-task-btn">Add New Task</button></Link>
                 <div className="task-period-container">
-                    <section className="daily-section">
-                        <h1>Daily</h1>
-                        {dailyThings}
-                    </section>
+                    
+                    <div className="dsection">  
+                        <div className="dheader">
+                            <h1>Daily</h1>
+                        </div> 
+                        
+                        <section className="daily-section">
+                            {dailyThings}
+                        </section>
+                    </div>
 
-                    <section className="weekly-section">
-                        <h1>Weekly</h1>
-                        {weeklyThings}
-                    </section>
+                    <div className="wsection"> 
+                        <div className="wheader">
+                            <h1>Weekly</h1>
+                        </div>
+                        
+                        <section className="weekly-section">
+                            {weeklyThings}
+                        </section>
+                    </div>
 
-                    <section className="monthly-section">
-                        <h1>Monthly</h1>
-                        {monthlyThings}
-                    </section>
+                    <div className="msection"> 
+                        <div className="mheader">
+                            <h1>Monthly</h1>
+                        </div>
+                        <section className="monthly-section">
+                            
+                            {monthlyThings}
+                        </section>
+                    </div>
 
-                    <section className="completed-section">
-                        <h1>Completed</h1>
-                        {completeThings}
-                    </section>
+                    <div className="csection"> 
+                        <div className="cheader">
+                            <h1>Completed</h1>
+                        </div>
+                        <section className="completed-section">
+                            
+                            {completeThings}
+                        </section>
+                    </div>
+
                 </div>
 
                 <div className="chart-container">

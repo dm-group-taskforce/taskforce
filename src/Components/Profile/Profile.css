@@ -71,10 +71,8 @@
 
 .chart-container {
   width: 40vw;
-  border: 2px solid white;
-  border-radius: 5px;
-  background: white;
-  margin-left: 10px;
+  margin-top: 2vh;
+  margin-left: 1vw;
 }
 
 .add-task-btn {
@@ -82,11 +80,17 @@
   color: white;
   height: 44px;
   margin-top: 23px;
+  margin-left: 10px;
   padding: .5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: .3rem;
   cursor: pointer;
+}
+
+.title-rank > h1 {
+  color: white;
+  margin-left: 10px;
 }
 
 .task-period-container {
@@ -95,18 +99,30 @@
   display: flex;
 }
 
+.dheader, .wsection, .msection, .csection {
+  background: #ff9800;
+  margin-top: 1vw;
+  width: 23vw;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-left: 1vw;
+  font-size: 1.5vw;
+}
+
+.dsection {
+  margin-left: 1vw;
+}
+
 .daily-section, .weekly-section, .monthly-section, .completed-section {
-  width: 30vw;
+  width: 23vw;
   background: white;
-  border: 2px solid white;
-  border-radius: 5px;
-  margin: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-right: 1vw;
   height: 350px;
   background: white;
   -webkit-box-shadow: 0 10px 6px -6px #777;
           box-shadow: 0 10px 6px -6px #777;
-  padding: 16px;
-  overflow-y: scroll;
 }
 
 .daily-task-card, .weekly-task-card, .monthly-task-card, .complete-task-card {

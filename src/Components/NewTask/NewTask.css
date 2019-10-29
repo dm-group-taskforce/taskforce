@@ -1,4 +1,4 @@
-.add-task-btn, .complete-task-btn, .cancel-task-btn {
+.add-task-btn, .complete-mytask-btn, .cancel-task-btn {
   background: #72c934;
   color: white;
   height: 44px;
@@ -69,6 +69,12 @@
   cursor: pointer;
 }
 
+.new-task-container {
+  background: white;
+  width: 60vw;
+  height: 20vh;
+}
+
 .task-content {
   width: 30vw;
   display: inline-block;
@@ -88,5 +94,13 @@
   font-family: inherit;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.new-task-form {
+  width: 50vw;
+}
+
+.new-task-form > h1 {
+  color: white;
 }
 /*# sourceMappingURL=NewTask.css.map */
