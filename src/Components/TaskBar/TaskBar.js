@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {TimelineMax, CSSPlugin, ScrollToPlugin, Draggable} from "gsap/all";
-import { TLSSocket } from "tls";
+import './TaskBar.scss'
 
 export class TaskBar extends Component {
     

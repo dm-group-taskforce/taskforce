@@ -68,4 +68,8 @@
   margin: 1px;
   cursor: pointer;
 }
+
+.button-container {
+  display: block;
+}
 /*# sourceMappingURL=Task.css.map */

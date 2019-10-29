@@ -58,8 +58,8 @@ class NewTask extends React.Component {
 
     render() {
         return (
-            <main>
-                <div>
+            <main className="new-task-container">
+                <div className="new-task-form">
                     <h1>What to do:</h1>
                     <input 
                     className="task-content"
@@ -103,7 +103,7 @@ class NewTask extends React.Component {
                     </select>
                 </div>
                 <button 
-                className="complete-task-btn" 
+                className="complete-mytask-btn" 
                 onClick={this.handleAddTask}>Add Task</button>
                 <Link to='/profile'>
                 <button className="cancel-task-btn">Cancel</button></Link>

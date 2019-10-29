@@ -32,16 +32,17 @@ module.exports = {
             const registerUser = await db.authorization.registerUser(username, password, email, first_name, last_name)
                 
                 let mailOptions = {
-                    from: 'TaskForce <flashcurve19@gmail.com>', 
+                    from: 'TaskForce <taskforce.devmtn@yahoo.com>', 
                     to: email, 
                     subject: 'Welcome to TaskForce', 
                     html:  `<b>
                     <div>
                     <h1>Welcome Private ${last_name}!</h1>
-                    <h4>Thank you for setting up your account with TaskForce, you Maggot!!!!. Your account has been created so now you can now start protecting Area 51<h4>
+                    <h4>Thank you for setting up your account with TaskForce!. Your account has been created so you can now start protecting Area 51 from alien invaders.<h4>
                     </div>
                     </b>`
                 }
+                    // Send Mailer Method
                     transporter.sendMail(mailOptions)
                     .then(response => {
                         console.log('This email was sent!');
@@ -49,8 +50,7 @@ module.exports = {
                     .catch(err => {
                         console.log('error', err)
                     })                
-                const user = registerUser[0];  
-                console.log(user);  
+                const user = registerUser[0]; 
                 req.session.user = { 
                 user_id: user.id,
                 username: user.username,
@@ -59,9 +59,9 @@ module.exports = {
                 last_name: user.last_name,  
                 mailOptions
             }
-             db.character.createCharacter(req.session.user.user_id);
-             db.rank.createRank(req.session.user.user_id);
-             db.chart.createChart(req.session.user.user_id);
+            db.character.createCharacter(req.session.user.user_id);
+            db.rank.createRank(req.session.user.user_id);
+            db.chart.createChart(req.session.user.user_id);
             res.status(200).json(req.session.user); 
         };    
     },
