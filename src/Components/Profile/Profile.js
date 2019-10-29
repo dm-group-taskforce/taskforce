@@ -51,7 +51,8 @@ class Profile extends Component {
         for (let i = 0; i < ranks.length; i++){
             if (ranks[i].abbreviation.toLowerCase() === this.props.abbreviation.toLowerCase()){
                 
-                this.setState({img: ranks[i].img, neededExp: ranks[i].expNeed, index: i})
+                this.setState({img: ranks[i].img, neededExp: ranks[i].expNeed, index: i}, () =>{console.log(this.state.index)})
+                
             }
         }
     }
@@ -74,7 +75,7 @@ class Profile extends Component {
 
     render() {
         let toNext = this.state.neededExp - this.props.experience;
-        if (toNext <= 0){
+        if (toNext <= 0 && this.props.experience > 0){
             this.props.editRank({
                 abbreviation: ranks[this.state.index + 1].abbreviation,
                 img: ranks[this.state.index + 1].img
