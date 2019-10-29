@@ -1,5 +1,9 @@
 @import '../../styles/components';
 
+.button-container {
+    display: block;
+}
+
 .complete-task-btn {
     @extend .complete-task-btn;
 }

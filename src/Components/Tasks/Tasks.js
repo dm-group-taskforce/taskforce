@@ -26,10 +26,10 @@ export class Tasks extends Component {
         return (
             <div>
                 {this.props.content}
-                {this.props.type}
-                {this.props.points}
+                {/* {this.props.type} */}
+                {/* {this.props.points} */}
                 {this.props.time !== 'completed'? 
-                <div>
+                <div className="button-container">
                 <Link to={`/tasks/${this.props.id}`}>
                 <button
                 className="edit-task-btn"

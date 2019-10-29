@@ -1,5 +1,11 @@
 @import '../../styles/components';
 
+.new-task-container {
+    background: white;
+    width: 60vw;
+    height: 20vh;
+}
+
 .task-content {
     width: 30vw;
     display: inline-block;
@@ -20,11 +26,20 @@
     box-sizing: border-box;
 }
 
-.complete-task-btn {
+.complete-mytask-btn {
     @extend .add-task-btn;
 }
 
 .cancel-task-btn {
     @extend .add-task-btn;
+}
+
+.new-task-form {
+    width: 50vw;
+    
+}
+
+.new-task-form > h1 {
+    color: white;
 }
 
