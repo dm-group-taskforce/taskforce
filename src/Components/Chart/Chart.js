@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Pie } from 'react-chartjs-2';
 import {getChart} from '../../redux/reducers/chartReducer'
-
+import './Chart.scss'
 
 class Chart extends Component {
 

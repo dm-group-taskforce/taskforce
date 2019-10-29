@@ -2,6 +2,7 @@ require('dotenv').config();
 const bcrypt = require("bcryptjs");
 const nodemailer = require('nodemailer');
 
+
 // Transporter
 let transporter = nodemailer.createTransport({
     service: 'gmail',
