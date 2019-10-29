@@ -40,6 +40,10 @@ function LandingPage() {
                                 unknown is going to get after you and demand
                                 something progressive gets done</p>
                             <img src={angrysgt} alt="angrySGT" />
+                            <img src={angrysgt} alt="angrySGT" />
+                            <img src={angrysgt} alt="angrySGT" />
+
+                      
                         </main>
 
                     </div>

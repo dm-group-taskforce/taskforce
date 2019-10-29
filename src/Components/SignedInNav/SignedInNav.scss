@@ -14,19 +14,65 @@
     width: 45vw;
 }
 .hamburgerB {
-    height: 6vw;
-    width: 6vw;
-    margin-top: 2vw;
+    height: 8vw;
+    width: 8vw;
+    margin-top: .01vw;
     cursor: pointer;
 }
 
 .openlist {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
+    background-color: rgba(186, 186, 186, 0.678);
+    
+}
 
+.openlist h3 {
+    color: #13e6d8;
+    margin-top: .25vw;
 
+}
+.openlist h3:hover{
+    color: black;
+}
+.top-menu-open {
+    width: 99vw;
+
+    margin-top: 20vw;
+}
+.sitop{
+    height: 30vw;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+}
+
+.bignav{
+    display:flex;
+    height: 25%;
+    width: 40vw;
+    justify-content: center;
+    text-align: bottom;
+    // background-color:blue;
+    margin-top: 14vw;
+    margin-right: 5vw;
+}
+.lis {
+    width: 75%;
+    height: 100%;    
+    // background-color: gray;
+    margin-right: -5vw;
+}
+
+.sitop, ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
 }
 
 @keyframes open {
@@ -34,7 +80,7 @@
         transform: translateX(1610px)
     }
     to {
-        transform: translateX(505px);
+        transform: translateX(510px);
     }
 }
 @keyframes  close {
@@ -46,7 +92,7 @@
     }
 }
 
-@media (max-width: 745px) {
+@media (max-width: 850px) {
     li {
         display: none;
     }

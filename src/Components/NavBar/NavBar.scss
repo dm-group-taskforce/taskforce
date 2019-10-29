@@ -22,11 +22,27 @@
     margin-top: 2vw;
     cursor: pointer;
 }
+.xxx{
+    height: 4vw;
+    width: 4vw;
+    margin-top: 1vw;
+    cursor: pointer;
+}
 .openlist {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    background-color: rgba(186, 186, 186, 0.678);
+    color: #13e6d8;
+}
+.openlist h3 {
+    color: #13e6d8;
+    margin-left: -10vw;
+}
+#log {
+    margin-left: 10vw;
 }
 
 .top {
@@ -34,8 +50,9 @@
     box-sizing: border-box;
     width: 100%;
     border: none;
-
 }
+
+
 a:link{
     text-decoration: none;
     width: 10vw;
@@ -57,9 +74,11 @@ a:link{
     // background-color: gray;
     margin-right: -5vw;
 }
-.butts{
-    background-color: orange;
+.lis a {
+    display: flex;
+    justify-content: space-between;
 }
+
 .top, ul {
     display: flex;
     flex-direction: row;
@@ -70,7 +89,7 @@ a:link{
 div.top-menu, .top-menu-open, .top-menu-close {
     width: 32vw;
     height: 32vw;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 31.5rem;
     transform: translateX(1610px);
@@ -85,7 +104,7 @@ div.top-menu, .top-menu-open, .top-menu-close {
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     margin-top: 13vw;
-    background: gray;
+
 }
 
 .top-menu-close{
@@ -118,7 +137,7 @@ div.top-menu, .top-menu-open, .top-menu-close {
     }
 }
 
-@media (max-width: 745px) {
+@media (max-width: 850px) {
     li {
         display: none;
     }

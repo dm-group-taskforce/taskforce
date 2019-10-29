@@ -11,44 +11,62 @@
 //     margin-left: auto;
 // }
 
+
+.rwholething {
+    background-image: url(../../Assets/pixelbackgray.png);
+    margin-top: -1vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    
+    min-height: 100vh;
+}
 .register-container {
     width: 100%;
     display: flex;
     min-height: 100vh;
     font-family: 'Varela Round', sans-serif;
-    // margin-top: 20vh;
+    margin-top: -10vh;
+
 }
 
 // left box
 .content-box {
     width: 35vw;
+    height: 60vh;
     color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin-left: 15vw;
-    margin-top: 20vh;
+    justify-content: center;
+    margin-top: -1vw;
     // border: 2px solid white;
     // border-radius: 5px;
     // background: white;
 }
 .content-box h1 {
     font-size: 3vw;
+    margin-top: 2vw;
 }
 .content-box p {
     margin-top: 1.5vw;
+    font-size: 1.5vw;
+    width: 90%;
 }
 // right box
 .register-box {
     width: 32vw;
-    height: 80vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     border: 2px solid white;
     border-radius: 5px;
     background: white;
+    text-align: center;
 }
 .register-box h1 {
     font-size: 2vw;

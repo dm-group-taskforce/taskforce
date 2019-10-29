@@ -40,10 +40,21 @@ class Register extends Component {
     }
 
     render() {
+
+            let butts = {
+                backgroundColor: '#13e6d8',
+                color: 'black',
+                width: '8vw',
+                fontSize: '1vw',
+                // borderRadius: '15px',
+                // outline: 'none',
+                // border: 'none'
+            }
         if(this.props.redirect === true && this.props.user_id !== null) {
             return <Redirect to='/profile'/>
         }
         return (
+            <main className="rwholething">
             <section className="intro-reg-page">
             <div className="outer-container">
                 <div className="register-container">
@@ -118,12 +129,14 @@ class Register extends Component {
                             variant="contained" 
                             color="primary" 
                             type="submit" 
+                            style={butts}
                             onClick={this.handleRegister}>Register</Button> 
                         </div>
                     </div>
                 </div>
             </div>
             </section>
+            </main>
         )
     }
 }
