@@ -6,11 +6,21 @@ import Navbar from './NavBar/Navbar'
 
 export class NavHolder extends Component {
 
+    constructor(){
+        super();
+        this.state = {
+            user: ''
+        }
+    }
+
     componentDidMount(){
-        this.props.getUser();
+        this.props.getUser()
+        console.log(this.props);
+        this.setState({user: '1'})
     }
 
     render() {
+        console.log(this.props.user_id)
         return (
             <div>
                 {this.props.user_id !== null?

@@ -16,6 +16,7 @@ let transporter = nodemailer.createTransport({
 module.exports = {
     getSession: (req, res) => {
         if(req.session.user) {
+            console.log(req.session.user)
             res.status(200).json(req.session.user);
         } 
     },
