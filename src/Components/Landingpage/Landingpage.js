@@ -1,6 +1,6 @@
 import React from "react";
 import "./LandingPage.scss"
-import AliceCarousel from 'react-alice-carousel';
+
 import Carousel from '../Carousel/Carousel'
 import angrysgt from "../../Assets/angry-sgt-1.png"
 import rank1 from "../../Assets/rank1.PNG"

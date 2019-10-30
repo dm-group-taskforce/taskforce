@@ -51,7 +51,7 @@ export function updateUser(editUser) {
 export function getUser() {
    return {
       type: GET_USER,
-      action: Axios.get('/auth/user')
+      payload: Axios.get('/auth/user')
    }
 }
 
@@ -59,8 +59,9 @@ export default function reducer(state = initialState, action) {
    const { type, payload } = action;
 
 
-
+   console.log(type, payload);
    switch (type) {
+      
       case `${REGISTER_USER}_FULFILLED`:
          return {
             ...state,
@@ -100,7 +101,7 @@ export default function reducer(state = initialState, action) {
             first_name: payload.data.first_name,
             last_name: payload.data.last_name,
             redirect: false
-      }
+      };
       case DELETE_USER:
             return {
                user_id: null,
@@ -109,8 +110,9 @@ export default function reducer(state = initialState, action) {
                first_name: '',
                last_name: '',
                redirect: false
-            }
+            };
       case `${GET_USER}_FULFILLED`:
+         
             return{
                user_id: payload.data.user_id,
                username: payload.data.username,
@@ -118,7 +120,7 @@ export default function reducer(state = initialState, action) {
                first_name: payload.data.first_name,
                last_name: payload.data.last_name,
                redirect: true
-             }
+             };
         default: return state;
     }
 }
