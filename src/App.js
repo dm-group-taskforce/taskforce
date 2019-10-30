@@ -1,13 +1,13 @@
 import React from 'react';
 import routes from './route'
-import SignedInNav from './Components/SignedInNav/SignedInNav';
+import NavHolder from './Components/NavHolder'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
 
-      <SignedInNav/>
+      <NavHolder/>
       {routes}
     </div>
   );
