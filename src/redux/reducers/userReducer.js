@@ -47,7 +47,10 @@ export function updateUser(editUser) {
    }
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 export function getUser() {
    return {
       type: GET_USER,
