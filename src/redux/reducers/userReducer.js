@@ -48,7 +48,6 @@ export function updateUser(editUser) {
 }
 
 
-
 export function getUser() {
    return {
       type: GET_USER,

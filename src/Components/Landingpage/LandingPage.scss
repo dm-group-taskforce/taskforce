@@ -1,13 +1,98 @@
 @import "../../app.scss";
 
-body {
-    background-image: url(../../Assets/pixelbackgray.png);
-    height: 180vw;
 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    box-sizing: border-box;
+.wholething {
+    background-image: url(../../Assets/pixelbackgray.png);
+    margin-top: -1vw;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.all{
+    background-color: rgba(255, 255, 255, 0.363);
+    width: 80vw;
+    margin-bottom: 3vw;
+    margin-top: -5vw;
+    // margin-bottom: 5vw;
+
+}
+.heading{
+    width: 80vw;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    
+}
+.head{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+    margin-top: 1%;
+    text-align: center;
+    align-content: center;
+}
+.bothcontainers {
+    display: flex;
+
+
+}
+
+.container1{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    
+}
+.leftside {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.leftside img {
+    height: 20vw;
+    width: 30vw;
+}
+.container2 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.rightside {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.leftside h2 {
+    font-size: 170%;
+}
+.leftside p {
+    font-size: 125%;
+    margin: 5%;
+}
+.rightside img {
+    width: 6vw;
+    height: 6vw;
+}
+.rankpics {
+    height: 35%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
 }
 
 

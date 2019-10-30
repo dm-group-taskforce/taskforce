@@ -12,11 +12,11 @@ test('Test to see type of loginUser == "LOGIN_USER" ', () => {
 test('Test to see type of logoutUser == LOGOUT_USER', () => {
     expect(logoutUser().type).toBe("LOGOUT_USER")
 })
-// Update
-test('Test to see type of updateUser == {} ', () => {
-    expect(updateUser().payload).resolves.toEqual({})
-})
 // Get User Session
 test('Test to see type of getUser == "GET_USER"', () => {
     expect(getUser().type).toBe("GET_USER")
+})
+// Update
+test('Test to see type of updateUser == {} ', () => {
+    expect(updateUser().payload).resolves.toEqual({})
 })

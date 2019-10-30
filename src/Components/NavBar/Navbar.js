@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import logoatt9001 from "../../Assets/logoatt9001.png"
-import hamburgergif from "../../Assets/hamburgergif.gif"
+import hamburgergif from "../../Assets/myhamburgerbutton.png"
 import Button from '@material-ui/core/Button';
 import "./NavBar.scss";
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/reducers/userReducer'
+import xxx from "../../Assets/xxx.png"
 
 class Navbar extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            menuOpenStatus: "top-menu"
+            menuOpenStatus: "top-menu-close"
         }
     }
 
@@ -35,7 +36,9 @@ class Navbar extends React.Component {
 
         let butts = {
             backgroundColor: '#13e6d8',
-            color: 'black'
+            color: 'black',
+            width: '8vw',
+            fontSize: '1.5vw'
         }
         return (
             <>
@@ -76,21 +79,33 @@ class Navbar extends React.Component {
                                     variant="contained" color="primary">REGISTER</Button></Link>
                                 </li>
                             <li className="MB">
-                                <img
-                                    onClick={this.toggle}
-                                    className="hamburgerB"
-                                    alt="hamburger"
-                                    src={hamburgergif} />
+                                {
+                                    this.state.menuOpenStatus === "top-menu-close" || this.state.menuOpenStatus === "top-menu" ?
+                                    <img
+                                        onClick={this.toggle}
+                                        className="hamburgerB"
+                                        alt="hamburger"
+                                        src={hamburgergif} />
+                                        :
+                                        <img
+                                        onClick={this.toggle}
+                                        className="xxx"
+                                        alt="hamburger"
+                                        src={xxx} />
+
+                                }
                             </li>
                         </ul>
 
                     </div>
                     <div className={`${this.state.menuOpenStatus}`}>
+                    <div className="openlist">
                         <Link to="/login">
-                            <h4 id="log">LOGIN</h4></Link>
+                            <h3 id="log">LOGIN</h3></Link>
                         <Link to="/register">
-                            <h4 id="reg">REGISTER</h4>
+                            <h3 id="reg">REGISTER</h3>
                         </Link>
+                    </div>
                     </div>
 
 
