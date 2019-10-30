@@ -47,14 +47,6 @@ export function updateUser(editUser) {
    }
 }
 
-// export function updateUser() {
-//    Axios.delete('/auth/delete')
-
-//    return {
-//       type: DELETE_USER
-//    }
-// }
-
 export function getUser() {
    return {
       type: GET_USER,

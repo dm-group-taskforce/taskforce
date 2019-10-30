@@ -1,5 +1,17 @@
 @import '../../styles/components';
 
+
+.pwholething {
+    background-image: url(../../Assets/pixelbackgray.png);
+    margin-top: -1vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    
+    min-height: 100vh;
+}
+
 .chart-container {
     width: 40vw;
     // border: 2px solid red;
