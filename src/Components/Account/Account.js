@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {updateUser} from '../../redux/reducers/userReducer'
-import {Redirect} from 'react-router-dom'
+import { updateUser } from '../../redux/reducers/userReducer'
+import { Redirect } from 'react-router-dom'
+import "./Account.scss"
+import { NONAME } from 'dns'
 
 export class Account extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             username: '',
@@ -15,8 +17,8 @@ export class Account extends Component {
         }
     }
     //while typing
-    handleEditInputs= e => {
-        this.setState({[e.target.name]: e.target.value})
+    handleEditInputs = e => {
+        this.setState({ [e.target.name]: e.target.value })
     }
     //shows onclick
     handleEditClick = () => {
@@ -27,7 +29,7 @@ export class Account extends Component {
 
     }
 
-    handleSubmitEdits= (e) => {
+    handleSubmitEdits = (e) => {
         e.preventDefault();
         // const {username, first_name, last_name, email} = this.state;
         this.props.updateUser({
@@ -37,54 +39,71 @@ export class Account extends Component {
             email: this.state.email || this.props.email
         }).then(() => {
 
-        this.setState({ updateUserClicked: false });
+            this.setState({ updateUserClicked: false });
         })
     }
     render() {
-        console.log(this.props)
+        let butts = {
+            backgroundColor: '#13e6d8',
+            color: 'black',
+            height: '2vw',
+            width: '8vw',
+            fontSize: '1.5vw',
+            margin: '1vw',
+            borderRadius: '10px',
+            border: 'none',
+            outline: 'none'
+        }
         return (
-            <div>
-                <div>
-                    <h1>ACCOUNT PAGE</h1>
-                    <h2>{this.props.username}</h2>
-                    <h2>{this.props.first_name}</h2>
-                    <h2>{this.props.last_name}</h2>
-                    <h2>{this.props.email}</h2>    
-                    <button onClick= {this.handleEditClick}>EDIT</button> 
-                </div>
-                <div>
-                    {
-                        this.state.updateUserClicked === true ?
-                        <section>
-                            <input className="fillins"
-                                    name="username"
-                                    onChange={this.handleEditInputs}
-                                    defaultValue={this.props.username}
-                            ></input>
-                            <input className="fillins"
-                                    name="first_name"
-                                    onChange={this.handleEditInputs}
-                                    defaultValue={this.props.first_name}
-                            ></input>
-                            <input className="fillins"
-                                    name="last_name"
-                                    onChange={this.handleEditInputs}
-                                    defaultValue={this.props.last_name}
-                            ></input>
-                            <input className="fillins"
-                                    name="email"
-                                    onChange={this.handleEditInputs}
-                                    defaultValue={this.props.email}
-                            ></input>
-                            <button className="subbut" 
-                                onClick={this.handleSubmitEdits}>SUBMIT</button>
-                                        
-                        </section>
-                        : null
-                    }
-                </div>
+            <main className="awholething">
+                <div id="allacc">
+                    <div className="acchead">
 
-            </div>
+                        <h1>ACCOUNT PAGE</h1>
+                    </div>
+
+                    <div className={`${this.state.updateUserClicked}`}>
+                        <h2>USERNAME: {this.props.username}</h2>
+                        <h2>FIRSTNAME: {this.props.first_name}</h2>
+                        <h2>LASTNAME: {this.props.last_name}</h2>
+                        <h2>EMAIL: {this.props.email}</h2>
+                        <button onClick={this.handleEditClick}
+                            style={butts}>EDIT</button>
+                    </div>
+                    <div className="accinputs">
+                        {
+                            this.state.updateUserClicked === true ?
+                                <section className="secinputs">
+                                    <input className="fillins"
+                                        name="username"
+                                        onChange={this.handleEditInputs}
+                                        defaultValue={this.props.username}
+                                    ></input>
+                                    <input className="fillins2"
+                                        name="first_name"
+                                        onChange={this.handleEditInputs}
+                                        defaultValue={this.props.first_name}
+                                    ></input>
+                                    <input className="fillins2"
+                                        name="last_name"
+                                        onChange={this.handleEditInputs}
+                                        defaultValue={this.props.last_name}
+                                    ></input>
+                                    <input className="fillins2"
+                                        name="email"
+                                        onChange={this.handleEditInputs}
+                                        defaultValue={this.props.email}
+                                    ></input>
+                                    <button style={butts}
+                                        onClick={this.handleSubmitEdits}>SUBMIT</button>
+
+                                </section>
+                                : null
+                        }
+                    </div>
+
+                </div>
+            </main>
         )
     }
 }

@@ -156,6 +156,7 @@ class Profile extends Component {
             
         
         return (
+            <main className="pwholething">
             <div>
                 <img src={this.state.img} alt='rank' style={{ width: '100px'}}/>
                 <div className="title-rank">
@@ -212,6 +213,7 @@ class Profile extends Component {
                 </div>
                 
             </div>
+            </main>
         )
     }
 }

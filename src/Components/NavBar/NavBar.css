@@ -25,18 +25,43 @@ body {
   cursor: pointer;
 }
 
+.xxx {
+  height: 4vw;
+  width: 4vw;
+  margin-top: 1vw;
+  cursor: pointer;
+}
+
 .openlist {
-  font-size: 3.5vw;
+  font-size: 2.5vw;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: rgba(186, 186, 186, 0.678);
+  color: #13e6d8;
+}
+
+.openlist h3 {
+  color: #13e6d8;
+}
+
+#reg {
+  margin-left: 5vw;
+}
+
+#log {
+  margin-left: -5vw;
 }
 
 .top {
@@ -62,8 +87,8 @@ a:link {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: bottom;
-  margin-top: 3.5vw;
-  margin-right: 5vw;
+  margin-top: 14.5vw;
+  margin-right: 15vw;
 }
 
 .lis {
@@ -72,8 +97,13 @@ a:link {
   margin-right: -5vw;
 }
 
-.butts {
-  background-color: orange;
+.lis a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .top, ul {
@@ -93,7 +123,7 @@ a:link {
 div.top-menu, .top-menu-open, .top-menu-close {
   width: 32vw;
   height: 32vw;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 31.5rem;
   -webkit-transform: translateX(1610px);
@@ -111,11 +141,10 @@ div.top-menu, .top-menu-open, .top-menu-close {
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   margin-top: 13vw;
-  background: gray;
 }
 
 .top-menu-close {
-  display: block;
+  display: none;
   -webkit-animation-name: close;
           animation-name: close;
   -webkit-animation-duration: 1s;
@@ -175,7 +204,7 @@ div.top-menu, .top-menu-open, .top-menu-close {
   }
 }
 
-@media (max-width: 745px) {
+@media (max-width: 850px) {
   li {
     display: none;
   }
