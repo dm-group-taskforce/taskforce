@@ -8,6 +8,8 @@ import LandingPage from "./Components/LandingPage/Landingpage";
 import Login from './Components/Login/Login'
 import Account from "./Components/Account/Account" 
 import EditTask from './Components/EditTask/EditTask'
+import Game1 from './Components/Games/Game1'
+import Game2 from './Components/Games/Game2'
 
 export default (
     <Switch>
@@ -16,7 +18,9 @@ export default (
         <Route path = "/account" component = {Account} />
         <Route exact path='/tasks/:taskId' component={EditTask}/>
         <Route path="/tasks" component={NewTask} />
-        <Route path="/games" component={Games} />
+        <Route exact path="/games" component={Games} />
+        <Route path="/games/1" component={Game1}/>
+        <Route path="/games/2" component={Game2}/>
         <Route path="/profile" component={Profile} />
         <Route exact path="/" component={LandingPage} />
     </Switch>
