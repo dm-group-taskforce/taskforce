@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Navbar from '../NavBar/Navbar';
 import logoatt9001 from "../../Assets/logoatt9001.png"
@@ -49,6 +49,11 @@ class SignedInNav extends React.Component {
 
         return (
             <>
+            {this.props.loggedin !== null && this.props.redirect === true ? 
+                <Redirect to="/profile"/>:
+            this.props.loggedin === null ?
+                <Redirect to="/"/>:
+                null}
                 <div className="thetop">
                     <nav className="sitiptop">
                         <div className="sitop">
@@ -150,7 +155,8 @@ class SignedInNav extends React.Component {
 
 function mapStateToProps(reduxState) {
     return {
-        loggedin: reduxState.userReducer.user_id
+        loggedin: reduxState.userReducer.user_id,
+        redirect: reduxState.userReducer.redirect
     }
 }
 

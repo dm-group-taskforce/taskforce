@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import logoatt9001 from "../../Assets/logoatt9001.png"
 import hamburgergif from "../../Assets/myhamburgerbutton.png"
 import Button from '@material-ui/core/Button';
 import "./NavBar.scss";
+import {connect} from 'react-redux';
+import {getUser} from '../../redux/reducers/userReducer'
 import xxx from "../../Assets/xxx.png"
 
 class Navbar extends React.Component {
@@ -13,6 +15,10 @@ class Navbar extends React.Component {
         this.state = {
             menuOpenStatus: "top-menu-close"
         }
+    }
+
+    componentDidMount(){
+        this.props.getUser();
     }
 
     toggle = () => {
@@ -25,6 +31,9 @@ class Navbar extends React.Component {
 
 
     render() {
+        
+        
+
         let butts = {
             backgroundColor: '#13e6d8',
             color: 'black',
@@ -33,6 +42,13 @@ class Navbar extends React.Component {
         }
         return (
             <>
+            {this.props.user_id !== null && this.props.redirect === true ? 
+                <Redirect to="/profile"/>:
+            this.props.user_id === null ?
+                <Redirect to="/"/>:
+                null
+        
+            }
             <div className="thetop">
                 <nav className="tiptop">
                     <div className="top">
@@ -101,4 +117,15 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar;
+const mapStateToProps = (reduxState) =>(
+    {
+        user_id: reduxState.userReducer.user_id,
+        redirect: reduxState.userReducer.redirect
+    }
+)
+
+const mapDispatchToProps ={
+    getUser
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
