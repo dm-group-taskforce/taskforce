@@ -1,3 +1,89 @@
 @import "../../app.scss";
 
 
+.awholething {
+    background-image: url(../../Assets/pixelbackgray.png);
+    margin-top: -1vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    
+    min-height: 100vh;
+}
+#allacc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin-top: -1vw;
+    
+}
+.acchead {
+    background-color: rgb(255,126,39);
+    height: 4vw;
+    width: 40vw;
+    margin-top: -20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: 2vw;
+    font-weight: bolder;
+
+    
+}
+.false {
+    background-color: rgb(186,186,186);
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
+.true {
+    background-color: rgb(186,186,186);
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.false h2 {
+    margin-top: 1.5vw;
+    font-size: 1.5vw;
+}
+.true h2 {
+    margin-top: 1.5vw;
+    font-size: 150%;
+}
+
+.accinputs {
+    width: 40vw;
+    background-color: rgb(186,186,186);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.secinputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.secinputs input {
+    font-size: 1.5vw;
+}
+
+.fillins2 {
+    margin-top: 1.5vw;
+}
