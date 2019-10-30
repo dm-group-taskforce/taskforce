@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {TimelineMax, CSSPlugin, ScrollToPlugin, Draggable} from "gsap/all";
+import {TimelineMax} from 'gsap';
 import './TaskBar.scss'
 
-export class TaskBar extends Component {
+class TaskBar extends Component {
     
     constructor() {
         super();
@@ -35,10 +35,8 @@ export class TaskBar extends Component {
         //     width: (parseInt(this.state.expS.width[0]) + 1) + "0%"
         // }})
         //this.setState({exp: this.state.exp + 100});
-        let ana = new TimelineMax()
-        
-        ana.to(".theexp", 2, {width: (newExp * 10) / 10 + "%"})
-        
+        let ana = new TimelineMax();
+        ana.to(".theexp", 2, {width: (newExp * 10) / 10 + "%"});
     }
 
 
@@ -73,4 +71,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskBar)
-
