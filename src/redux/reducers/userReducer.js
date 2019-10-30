@@ -2,12 +2,12 @@ import Axios from 'axios';
 
 
 const initialState = {
-    username: '',
-    user_id: null,
-    email: '',
-    first_name: '',
-    last_name: '',
-    redirect: false
+   username: '',
+   user_id: null,
+   email: '',
+   first_name: '',
+   last_name: '',
+   redirect: false
 }
 
 
@@ -47,7 +47,7 @@ export function updateUser(editUser) {
    }
 }
 
-export function deleteUser() {
+export function updateUser() {
    Axios.delete('/auth/delete')
 
    return {
