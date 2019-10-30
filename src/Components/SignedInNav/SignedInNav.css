@@ -32,8 +32,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -45,6 +46,18 @@ body {
   margin-top: .25vw;
 }
 
+#pro {
+  margin-left: -8vw;
+}
+
+#games {
+  margin-left: -4vw;
+}
+
+#lo {
+  margin-left: 8vw;
+}
+
 .openlist h3:hover {
   color: black;
 }
@@ -52,6 +65,19 @@ body {
 .top-menu-open {
   width: 99vw;
   margin-top: 20vw;
+}
+
+.top-menu-close {
+  display: none;
+  -webkit-animation-name: close;
+          animation-name: close;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  margin-top: 13vw;
 }
 
 .sitop {
@@ -102,8 +128,8 @@ body {
             transform: translateX(1610px);
   }
   to {
-    -webkit-transform: translateX(510px);
-            transform: translateX(510px);
+    -webkit-transform: translateX(499px);
+            transform: translateX(499px);
   }
 }
 
@@ -113,8 +139,8 @@ body {
             transform: translateX(1610px);
   }
   to {
-    -webkit-transform: translateX(510px);
-            transform: translateX(510px);
+    -webkit-transform: translateX(499px);
+            transform: translateX(499px);
   }
 }
 

@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     constructor() {
         super();
         this.state = {
-            menuOpenStatus: "top-menu"
+            menuOpenStatus: "top-menu-close"
         }
     }
 
