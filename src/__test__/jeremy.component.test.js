@@ -13,8 +13,9 @@ import NewTask from '../Components/NewTask/NewTask';
 import Profile from '../Components/Profile/Profile';
 import Register from '../Components/Register/Register';
 import TaskBar from '../Components/TaskBar/TaskBar';
-
 configure({ adapter: new Adapter() });
+
+const mockStore = configureMockStore();
 const store = mockStore({ userReducer: {} });
 
 describe("SignedInNav Component", () => {
