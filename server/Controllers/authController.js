@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 // Transporter
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'yahoo',
     secure: false,
     auth: {
         user: process.env.EMAIL,
@@ -16,7 +16,7 @@ let transporter = nodemailer.createTransport({
 module.exports = {
     getSession: (req, res) => {
         if(req.session.user) {
-            console.log(req.session.user)
+            
             res.status(200).json(req.session.user);
         } 
     },
@@ -29,7 +29,7 @@ module.exports = {
         } else {
             const salt = bcrypt.genSaltSync(10);
             const hash = bcrypt.hashSync(password, salt);
-            const registerUser = await db.authorization.registerUser(username, password, email, first_name, last_name)
+            const registerUser = await db.authorization.registerUser(username, hash, email, first_name, last_name)
                 
                 let mailOptions = {
                     from: 'TaskForce <taskforce.devmtn@yahoo.com>', 
@@ -44,7 +44,7 @@ module.exports = {
                 }
                     // Send Mailer Method
                     transporter.sendMail(mailOptions)
-                    .then(response => {
+                    .then(() => {
                         console.log('This email was sent!');
                     })
                     .catch(err => {
