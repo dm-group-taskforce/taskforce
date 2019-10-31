@@ -58,7 +58,7 @@ export default function reducer(state = initialState, action) {
    const { type, payload } = action;
 
 
-   console.log(type, payload);
+   
    switch (type) {
       
       case `${REGISTER_USER}_FULFILLED`:
@@ -92,7 +92,6 @@ export default function reducer(state = initialState, action) {
             redirect: false
          };
       case `${UPDATE_USER}_FULFILLED`:
-      console.log(payload)
       return {
             ...state,
             username: payload.data.username,
