@@ -42,7 +42,7 @@
 .task-period-container {
     display: flex;  
 }
-.dheader, .wsection, .msection, .csection {
+.dsection, .wsection, .msection, .csection {
     background: rgb(255, 152, 0);
     margin-top:1vw;
     width: 23vw;
@@ -50,9 +50,6 @@
     border-top-right-radius: 5px;
     margin-left: 1vw;
     font-size: 1.5vw; 
-}
-.dsection{
-    margin-left: 1vw;
 }
 
 .daily-section, .weekly-section, .monthly-section, .completed-section {
@@ -85,6 +82,7 @@
 
 .weekly-task-card, .monthly-task-card, .complete-task-card  {
     @extend .daily-task-card;
+    width: 96%;
 }
 
 .delete-task-btn {
