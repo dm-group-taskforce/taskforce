@@ -58,7 +58,8 @@ class NewTask extends React.Component {
 
     render() {
         return (
-            <main className="new-task-container">
+            <main>
+                <div className="new-task-container">
                 <div className="new-task-form">
                     <h1>What to do:</h1>
                     <input 
@@ -111,7 +112,7 @@ class NewTask extends React.Component {
                 <TaskConfirmation function={this.toggleShowCon}/>:
                 null
                 }
-                
+            </div>
             </main>
         )
     }
