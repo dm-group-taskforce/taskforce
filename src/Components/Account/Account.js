@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { updateUser } from '../../redux/reducers/userReducer'
 import { Redirect } from 'react-router-dom'
 import "./Account.scss"
+import TextField from "@material-ui/core/TextField";
 import { NONAME } from 'dns'
 
 export class Account extends Component {
@@ -62,48 +63,76 @@ export class Account extends Component {
                         <h1>ACCOUNT PAGE</h1>
                     </div>
 
-                    <div className={`${this.state.updateUserClicked}`}>
-                        <h2>USERNAME: {this.props.username}</h2>
-                        <h2>FIRSTNAME: {this.props.first_name}</h2>
-                        <h2>LASTNAME: {this.props.last_name}</h2>
-                        <h2>EMAIL: {this.props.email}</h2>
-                        <button onClick={this.handleEditClick}
-                            style={butts}>EDIT</button>
-                    </div>
+
                     <div className="accinputs">
                         {
                             this.state.updateUserClicked === true ?
                                 <section className="secinputs">
-                                    <input className="fillins"
-                                        name="username"
+                                    <div>
+                                    <TextField
+                                        name='username'
+                                        label='Username'
+                                        className='register-input'
                                         onChange={this.handleEditInputs}
+                                        margin="normal"
+                                        variant="filled"
+                                        autoComplete="off"
                                         defaultValue={this.props.username}
-                                    ></input>
-                                    <input className="fillins2"
-                                        name="first_name"
+                                    />
+                                    </div>
+                                    <div>
+                                    <TextField
+                                        name='first_name'
+                                        label='First Name'
+                                        className='register-input'
                                         onChange={this.handleEditInputs}
+                                        margin="normal"
+                                        variant="filled"
+                                        autoComplete="off"
                                         defaultValue={this.props.first_name}
-                                    ></input>
-                                    <input className="fillins2"
-                                        name="last_name"
+                                    />
+                                    </div>
+                                    <div>
+                                    <TextField
+                                        name='last_name'
+                                        label='Last Name'
+                                        className='register-input'
                                         onChange={this.handleEditInputs}
+                                        margin="normal"
+                                        variant="filled"
+                                        autoComplete="off"
                                         defaultValue={this.props.last_name}
-                                    ></input>
-                                    <input className="fillins2"
-                                        name="email"
+                                    />
+                                    </div>
+                                    <div>
+                                    <TextField
+                                        name='email'
+                                        label='Email'
+                                        className='register-input'
                                         onChange={this.handleEditInputs}
+                                        margin="normal"
+                                        variant="filled"
+                                        autoComplete="off"
                                         defaultValue={this.props.email}
-                                    ></input>
-                                    <button style={butts}
-                                        onClick={this.handleSubmitEdits}>SUBMIT</button>
+                                    />
+                                    </div>
+                                <button style={butts}
+                                    onClick={this.handleSubmitEdits}>SUBMIT</button>
 
                                 </section>
-                                : null
-                        }
+                    :                     <div className={`${this.state.updateUserClicked}`}>
+                    <h2>USERNAME: {this.props.username}</h2>
+                    <h2>FIRSTNAME: {this.props.first_name}</h2>
+                    <h2>LASTNAME: {this.props.last_name}</h2>
+                    <h2>EMAIL: {this.props.email}</h2>
+                    <button onClick={this.handleEditClick}
+                        style={butts}>EDIT</button>
+                </div>
+            }
                     </div>
 
                 </div>
-            </main>
+            </main >
         )
     }
 }

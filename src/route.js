@@ -4,7 +4,7 @@ import Register from "./Components/Register/Register";
 import NewTask from "./Components/NewTask/NewTask";
 import Games from "./Components/Games/Games";
 import Profile from "./Components/Profile/Profile";
-import LandingPage from './Components/LandingPage/Landingpage';
+import LandingPage from './Components/LandingPage/LandingPage';
 import Login from './Components/Login/Login'
 import Account from "./Components/Account/Account" 
 import EditTask from './Components/EditTask/EditTask'

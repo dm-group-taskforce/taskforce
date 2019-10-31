@@ -47,6 +47,13 @@ export function updateUser(editUser) {
    }
 }
 
+export function deleteUser() {
+   return {
+      type: DELETE_USER,
+      payload: Axios.get('/auth/delete')
+   }
+}
+
 export function getUser() {
    return {
       type: GET_USER,
