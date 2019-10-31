@@ -13,6 +13,11 @@ import NewTask from '../Components/NewTask/NewTask';
 import Profile from '../Components/Profile/Profile';
 import Register from '../Components/Register/Register';
 import TaskBar from '../Components/TaskBar/TaskBar';
+import Games from '../Components/Games/Games';
+import Game1 from '../Components/Games/Game1';
+import Game2 from '../Components/Games/Game2';
+import EditTask from '../Components/EditTask/EditTask';
+import Account from '../Components/Account/Account';
 configure({ adapter: new Adapter() });
 
 const mockStore = configureMockStore();
@@ -64,6 +69,57 @@ describe("TaskBar Component", () => {
             shallow(
             <Provider store={store}>
                 <TaskBar />
+            </Provider>).exists()).toBe(true)
+    })
+})
+
+//Jake's Tests
+describe("Games Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <Games/>
+            </Provider>).exists()).toBe(true)
+    })
+})
+
+describe("Game1 Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <Game1 />
+            </Provider>).exists()).toBe(true)
+    })
+})
+
+describe("Game2 Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <Game2 />
+            </Provider>).exists()).toBe(true)
+    })
+})
+
+describe("EditTask Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <EditTask />
+            </Provider>).exists()).toBe(true)
+    })
+})
+
+describe("Account Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <Account />
             </Provider>).exists()).toBe(true)
     })
 })

@@ -1,5 +1,7 @@
 import React from "react";
 import info from './carouselinfo';
+import "./Carousel.scss";
+import "./carouselinfo.scss"
 
 
 
@@ -16,9 +18,9 @@ class Carousel extends React.Component {
     //     setTimeout(this.indexUp, 5000);
     // }
 
-    componentDidUpdate(prevProps, prevState){
-        if(prevState.index !== this.state.index){
-            setTimeout(this.indexUp, 5000);
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.index !== this.state.index) {
+            // setTimeout(this.indexUp, 5000);
         }
     }
 
@@ -44,26 +46,31 @@ class Carousel extends React.Component {
         return (
             <div className="carousel">
 
-                <div className="cards">
+                <div className="cards" style={{backgroundColor: `${info[this.state.index].color}`, borderColor: `${info[this.state.index].borderColor}` }}>
 
                     <div className="cardcontent">
 
                         <div className="cardwords">
                             <h1>{info[this.state.index].content}</h1>
                         </div>
+                        <div className="bothbutts">
 
-                        <div className="cardimg">
-                        <img src={info[this.state.index].img} alt='card image' />
+                            <div >
+                                <button onClick={this.indexDown}
+                                className="leftbutt">&lt;</button>
+                            </div>
+
+                            <div >
+                                <button onClick={this.indexUp}
+                                className="rightbutt">></button>
+                            </div>
+
+
                         </div>
 
-                    </div>
-
-                    <div className="leftbutt">
-                        <button onClick={this.indexDown}>Back</button>
-                    </div>
-
-                    <div className="rightbutt">
-                        <button onClick={this.indexUp}>Forward</button>
+                            <div className="cardimg">
+                                <img src={info[this.state.index].img} alt='card image' className={info[this.state.index].style}/>
+                            </div>
                     </div>
 
                 </div>
