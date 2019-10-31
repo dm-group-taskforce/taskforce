@@ -1,6 +1,8 @@
-import { registerUser, loginUser, logoutUser, updateUser, getUser} from "../redux/reducers/userReducer";
+import { registerUser, loginUser, logoutUser, updateUser, getUser, deleteUser} from "../redux/reducers/userReducer";
 import {editTask, addTask, getUserTask, deleteTask} from '../redux/reducers/taskReducer'
-import {getRank} from '../redux/reducers/rankReducer'
+import {getCharacter, updateCharacter} from "../redux/reducers/characterReducer";
+import {getRank,editRank} from '../redux/reducers/rankReducer'
+import {getChart} from "../redux/reducers/chartReducer"
 
 //Jeremy's Tests
 // Register User
@@ -23,6 +25,27 @@ test('Test to see type of getUser == "GET_USER"', () => {
 test('Test to see type of updateUser == {} ', () => {
     expect(updateUser().payload).resolves.toEqual({})
 })
+
+//Rob's Unit Tests
+test('Test to see type of getCharacter == "GET_CHARACTER" ', () => {
+    expect(getCharacter().type).toBe("GET_CHARACTER")
+})
+
+test('Test to see type of updateCharacter == "UPDATE_CHARACTER" ', () => {
+    expect(updateCharacter().type).toBe("UPDATE_CHARACTER")
+})
+
+test('Test to see type of editRank == EDIT_RANK', () => {
+    expect(editRank().type).toBe("EDIT_RANK")
+})
+
+test('Test to see type of getChart == "GET_CHART"', () => {
+    expect(getChart().type).toBe("GET_CHART")
+})
+test('Test to see type of deleteUser == "DELETE_USER"', () => {
+    expect(deleteUser().type).toBe("DELETE_USER")
+})
+
 
 
 //Jake's Tests

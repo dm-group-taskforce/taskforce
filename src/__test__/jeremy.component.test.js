@@ -18,6 +18,12 @@ import Game1 from '../Components/Games/Game1';
 import Game2 from '../Components/Games/Game2';
 import EditTask from '../Components/EditTask/EditTask';
 import Account from '../Components/Account/Account';
+import Carousel from '../Components/Carousel/Carousel';
+import Chart from '../Components/Chart/Chart';
+import LandingPage from '../Components/LandingPage/LandingPage';
+import Login from '../Components/Login/Login';
+import NavBar from '../Components/NavBar/Navbar';
+
 configure({ adapter: new Adapter() });
 
 const mockStore = configureMockStore();
@@ -72,6 +78,66 @@ describe("TaskBar Component", () => {
             </Provider>).exists()).toBe(true)
     })
 })
+
+////////////////////Robs tests ///////////////////////////////////////////
+// import Carousel from '../Components/Carousel/Carousel';
+// import Chart from '../Components/Chart/Chart';
+// import LandingPage from '../Components/LandingPage/LandingPage';
+// import Login from '../Components/Login/Login';
+// import NavBar from '../Components/NavBar/Navbar';
+
+describe("Carousel Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <Carousel />
+            </Provider>).exists()).toBe(true);
+    })
+})
+
+
+describe("NavBar Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <NavBar />
+            </Provider>).exists()).toBe(true);
+    })
+})
+
+describe("Login Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <Login />
+            </Provider>).exists()).toBe(true);
+    })
+})
+
+describe("LandingPage Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <LandingPage />
+            </Provider>).exists()).toBe(true);
+    })
+})
+
+describe("Chart Component", () => {
+    it('should render without throwing an error', () => {
+        expect(
+            shallow(
+            <Provider store={store}>
+                <Chart />
+            </Provider>).exists()).toBe(true);
+    })
+})
+
+
 
 //Jake's Tests
 describe("Games Component", () => {

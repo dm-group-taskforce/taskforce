@@ -27,7 +27,7 @@
     display: flex;
     min-height: 100vh;
     font-family: 'Varela Round', sans-serif;
-    margin-top: -10vh;
+    margin-top: -20vh;
 
 }
 
@@ -42,6 +42,7 @@
     text-align: center;
     justify-content: center;
     margin-top: -1vw;
+    box-sizing: border-box;
     // border: 2px solid white;
     // border-radius: 5px;
     // background: white;
@@ -58,15 +59,16 @@
 // right box
 .register-box {
     width: 32vw;
-    height: 55vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid white;
+    background: rgb(186,186,186);
+    border: 10px solid #13e6d8;
     border-radius: 5px;
-    background: white;
     text-align: center;
+    box-sizing: border-box;
 }
 .register-box h1 {
     font-size: 2vw;

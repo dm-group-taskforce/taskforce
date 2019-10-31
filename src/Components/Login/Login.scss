@@ -11,11 +11,13 @@
 }
 
 .login-container {
-    background: white;
+    background: rgb(186,186,186);
+    border: 10px solid #13e6d8;
+    border-radius: 5px;
     height: 20vw;
-    width: 20vw;
+    width: 25vw;
     margin-bottom: 3vw;
-    margin-top: -5vw;
+    margin-top: -10vw;
     display: flex;
     justify-content: center;
     flex-direction: column;

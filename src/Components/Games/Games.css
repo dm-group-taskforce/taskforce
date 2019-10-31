@@ -1,0 +1,139 @@
+.gwholething {
+  background-image: url(../../Assets/pixelbackgray.png);
+  margin-top: -1vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+.angry {
+  margin-top: -42vw;
+}
+
+.gheader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 2.5vw;
+}
+
+.gheader h1 {
+  width: 60vw;
+  border-radius: 40px;
+  margin: .5vw;
+  padding: .5vw;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 5px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000, 0 0 10px #ff0000, 0 0 98px #ff0000;
+  color: #3f3f3f;
+  animation: blink 10s infinite;
+  -webkit-animation: blink 10s infinite;
+}
+
+.game1 {
+  height: 25vw;
+  width: 25vw;
+  background-color: blue;
+  background-image: url(../../Assets/LVL1screen.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 5vw;
+}
+
+.game2 {
+  background-image: url(../../Assets/LVL2screen.png);
+  height: 25vw;
+  width: 25vw;
+  background-color: red;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gbutts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2.5vw;
+}
+
+.gbutt1 {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gbutt2 {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@-webkit-keyframes blink {
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000, 0 0 10px #ff0000, 0 0 98px #ff0000;
+    color: #ff0000;
+  }
+}
+
+@keyframes blink {
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000, 0 0 10px #ff0000, 0 0 98px #ff0000;
+    color: #000000;
+  }
+}
+/*# sourceMappingURL=Games.css.map */

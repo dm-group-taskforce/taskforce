@@ -6,7 +6,7 @@ const info = [
         content: 'Are you ready to become your best self?',
         img: XXX,
         style: 'card1',
-        color: 'rgb(186,186,186)',
+        color: 'rgb(75, 75, 75)',
         borderColor: '#13e6d8'
     },
     {
