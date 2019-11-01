@@ -74,6 +74,15 @@ class Profile extends Component {
     }
 
     render() {
+        let butts = {
+            backgroundColor: '#13e6d8',
+            color: 'black',
+            width: '8vw',
+            fontSize: '1vw',
+            cursor: 'pointer',
+            outline: 'none',
+            border: 'none'
+        }
         let toNext = this.state.neededExp - this.props.experience;
         if (toNext <= 0 && this.props.experience > 0){
             this.props.editRank({
@@ -157,16 +166,23 @@ class Profile extends Component {
         
         return (
             <main className="pwholething">
-            <div className="">
+            <div className="allprofile">
+                <div className="userstuff">
+                    <div className="userbox">
                 <img src={this.state.img} alt='rank' style={{ width: '100px'}}/>
-                <h1>{this.props.abbreviation} {this.props.last_name}</h1>
-                <div className="title-rank">
-                    <h1>To next rank: {toNext}</h1>
+                <h1>{this.props.abbreviation} {this.props.last_name.toUpperCase()}</h1>
+                </div>
                 </div>
                 <TaskBar/>
-                <Link to='/tasks'><button className="add-task-btn">Add New Task</button></Link>
+                <div className="title-rank">
+                    <h1>To next rank: {toNext} exp.</h1>
+                </div>
+                <div className="atbutton">
+                <Link to='/tasks'><button className="add-task-btn" style={butts}>Add New Task</button></Link>
+                </div>
                 <div className="task-period-container">
-                    
+                
+                    <div className="top2">
                     <div className="dsection">  
                         <div className="dheader">
                             <h1>Daily</h1>
@@ -186,7 +202,9 @@ class Profile extends Component {
                             {weeklyThings}
                         </section>
                     </div>
+                    </div>
 
+                    <div className="bottom2">
                     <div className="msection"> 
                         <div className="mheader">
                             <h1>Monthly</h1>
@@ -206,12 +224,14 @@ class Profile extends Component {
                             {completeThings}
                         </section>
                     </div>
+                    </div>
 
                 </div>
                 {this.props.experience !== 0?
                     <div className="chart-container">
+                        <div className="thechart">
                         <Chart />
-                    </div>:
+                    </div></div>:
                     null
             
                 }

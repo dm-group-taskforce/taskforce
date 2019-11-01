@@ -21,7 +21,7 @@ class Chart extends Component {
     render() {
        
         return (
-            <div className="chart-container" >
+            <div className="chart-containerr" >
                 <Pie
                     
                     data={this.props.chartData}

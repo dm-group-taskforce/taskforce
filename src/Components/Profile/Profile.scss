@@ -12,54 +12,113 @@
     min-height: 100vh;
 }
 
+.allprofile {
+    margin-top: -15vw;
+}
+
+.userstuff {
+    display: flex;
+    font-size: 4.5vw;
+    color: rgb(186,186,186);
+    justify-content: center;
+    align-items: center;
+}
+.userbox {
+
+    background: rgb(75, 75, 75);
+    border: 5px solid #13e6d8;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 2vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.userbox img {
+    margin-left: 2vw;
+}
+.userbox h1 {
+    margin-right: 2vw;
+}
 .chart-container {
-    width: 40vw;
+    height: 60vw;
     // border: 2px solid red;
     // border-radius: 5px;
-    // background: white;
+    background: transparent;
     margin-top: 2vh;
-    margin-left: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35vw;
+
+}
+.thechart{
+    height: 60vw;
+    width: 60vw;
 }
 
-.add-task-btn {
-    background: #72c934;
-    color: white;
-    height: 44px;
-    margin-top: 23px;
-    margin-left: 10px;
-    padding: .5rem 1rem;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    border-radius: .3rem;
-    cursor: pointer;
-}
+
 
 .title-rank > h1 {
-    color: white;
+    color: rgb(75, 75, 75);
     margin-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.atbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .task-period-container {
-    display: flex;  
+    display: flex; 
+    flex-direction: column; 
+    width: 90vw;
+
+}
+.dheader, .wheader, .mheader, .cheader {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #13e6d8;
+    font-size: 1.5vw; 
+    height: 2vw;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .dsection, .wsection, .msection, .csection {
-    background: rgb(255, 152, 0);
+    
     margin-top:1vw;
     width: 23vw;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin-left: 1vw;
-    font-size: 1.5vw; 
+    
+    box-sizing: border-box;
 }
 
 .daily-section, .weekly-section, .monthly-section, .completed-section {
     width: 23vw;
-    background: white;
+    background: rgb(186,186,186);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin-right: 1vw;
     height: 350px;
-    background: white;
+    overflow: auto;
     box-shadow: 0 10px 6px -6px #777;
 }
 
@@ -82,7 +141,7 @@
 
 .weekly-task-card, .monthly-task-card, .complete-task-card  {
     @extend .daily-task-card;
-    width: 96%;
+    width: 99%;
 }
 
 .delete-task-btn {

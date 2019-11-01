@@ -7,6 +7,7 @@ const initialState = {
 
 const GET_CHART = 'GET_CHART';
 
+
 export function getChart(){
     return {
         type: GET_CHART,
@@ -22,9 +23,10 @@ export default function Reducer(state = initialState, action){
                     labels: ['Health', 'Social', 'Education', 'Hobby', 'Work', 'Personal'],
                     datasets: [{
                         data: [],
-                        backgroundColor: ['red', 'blue', 'pink', 'green', 'purple', 'orange'],
-                        hoverBackgroundColor: ['red', 'blue', 'pink', 'green', 'purple', 'orange']
-                    }]
+                        borderColor: 'transparent',
+                        backgroundColor: ['#e61313', '#13e6d8', '#ff16cd', '#36e613', '#d413e6', '#e67913'],
+                        hoverBackgroundColor: ['#e61313', '#13e6d8', '#ff16cd', '#36e613', '#d413e6', '#e67913']
+                    }],
                 }
                 
                 let arr = [];
