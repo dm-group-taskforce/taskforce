@@ -27,14 +27,14 @@
     display: flex;
     min-height: 100vh;
     font-family: 'Varela Round', sans-serif;
-    margin-top: -20vh;
+    margin-top: -25vh;
 
 }
 
 // left box
 .content-box {
     width: 35vw;
-    height: 60vh;
+    height: 40vw;
     color: white;
     display: flex;
     align-items: center;
@@ -59,7 +59,7 @@
 // right box
 .register-box {
     width: 32vw;
-    height: 60vh;
+    height: 40vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
