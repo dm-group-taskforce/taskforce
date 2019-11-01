@@ -10,9 +10,10 @@ class TaskBar extends Component {
         this.state={
             experience: 0,
             expS: {
-                backgroundColor: 'red',
-                height: "5vw",
-                width: "0%"
+                background: 'linear-gradient(to right, blue, red, yellow, green, pink)',
+                height: "2vw",
+                width: "0%",
+                borderRadius: '25px'
             }
         }
     }
@@ -36,15 +37,19 @@ class TaskBar extends Component {
         // }})
         //this.setState({exp: this.state.exp + 100});
         let ana = new TimelineMax();
-        ana.to(".theexp", 2, {width: (newExp * 10) / 10 + "%"});
+        ana.to(".theexp", 2, {width: (newExp * 2) / 10 + "%"});
     }
 
 
     render() {
         let expbar = {
-            backgroundColor: 'green',
-            height: "5vw",
-            width: "15vw"
+            backgroundColor: 'transparent',
+            border: '5px solid rgb(186,186,186)',
+            // border: '3px solid #13e6d8',
+            height: "2vw",
+            width: "90vw",
+            borderRadius: '25px',
+            marginTop: '2vw'
         }
         if (this.state.experience !== this.props.exp){
 

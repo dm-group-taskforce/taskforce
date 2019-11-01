@@ -17,16 +17,24 @@
     height: 100%;
     width: 90%;
     margin-left: 5%;
+    
 }
 .cardwords {
     height: 45%;
+    margin-top: -3vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 2vw;
     font-family: 'Varela Round', sans-serif;
-    color: white;
+    color: rgb(186,186,186);
     font-weight: bold;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 
 }
 

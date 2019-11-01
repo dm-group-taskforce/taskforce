@@ -1,15 +1,23 @@
 @import '../../styles/components';
 
-
+.eachtask {
+    font-size: 2vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: .5vw;
+    
+}
+.bigtask {
+    border-top: 2px solid black;
+}
 
 .button-container {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.taskbutts {
+    margin-bottom: .5vw;
 }
 
-.complete-task-btn {
-    @extend .complete-task-btn;
-}
-
-.edit-task-btn {
-    @extend .edit-task-btn;
-}
