@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import {editTask} from '../../redux/reducers/taskReducer'
 import {Link} from 'react-router-dom'
 import {updateCharacter} from '../../redux/reducers/characterReducer'
+import "./Task.scss"
 
 export class Tasks extends Component {
 
@@ -24,6 +25,7 @@ export class Tasks extends Component {
 
     render() {
         return (
+
             <div>
                 {this.props.content}
                 {/* {this.props.type} */}
@@ -53,6 +55,7 @@ export class Tasks extends Component {
                 }
                 
             </div>
+
         )
     }
 }
