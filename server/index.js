@@ -15,6 +15,7 @@ const {CONNECTION_STRING, SERVER_PORT,  SESSION_SECRET} = process.env;
 
 // Middleware
 app.use(express.json());
+app.use( express.static( `${__dirname}/../build` ) );
 
 // Database
 massive(CONNECTION_STRING).then(dbInstance => {
