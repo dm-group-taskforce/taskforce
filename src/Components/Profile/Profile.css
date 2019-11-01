@@ -113,7 +113,7 @@
   display: flex;
 }
 
-.dheader, .wsection, .msection, .csection {
+.dsection, .wsection, .msection, .csection {
   background: #ff9800;
   margin-top: 1vw;
   width: 23vw;
@@ -121,10 +121,6 @@
   border-top-right-radius: 5px;
   margin-left: 1vw;
   font-size: 1.5vw;
-}
-
-.dsection {
-  margin-left: 1vw;
 }
 
 .daily-section, .weekly-section, .monthly-section, .completed-section {
@@ -159,6 +155,10 @@
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: .25rem;
+}
+
+.weekly-task-card, .monthly-task-card, .complete-task-card {
+  width: 96%;
 }
 
 .delete-task-btn {
