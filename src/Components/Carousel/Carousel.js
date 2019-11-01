@@ -69,7 +69,25 @@ class Carousel extends React.Component {
                         </div>
 
                             <div className="cardimg">
-                                <img src={info[this.state.index].img} alt='card image' className={info[this.state.index].style}/>
+                                <div>
+                                {this.state.index === 1? 
+                                    <section>
+                                    <img src={info[this.state.index].img} alt='card image' className={info[this.state.index].style}/>
+                                    <img src={info[this.state.index].img2} alt='card image' className={info[this.state.index].style}/>
+                                    <img src={info[this.state.index].img3} alt='card image' className={info[this.state.index].style}/>
+                                    <img src={info[this.state.index].img4} alt='card image' className={info[this.state.index].style}/>
+                                    <img src={info[this.state.index].img5} alt='card image' className={info[this.state.index].style}/>
+                                    <img src={info[this.state.index].img6} alt='card image' className={info[this.state.index].style}/> 
+                                    </section>:
+                                    this.state.index !== 1?
+                                    <section>
+                                    <img src={info[this.state.index].img} alt='card image' className={info[this.state.index].style}/>
+                                    </section>:
+                                    null
+                                
+                                }
+                               
+                                </div>
                             </div>
                     </div>
 
