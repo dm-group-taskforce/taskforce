@@ -1,5 +1,49 @@
 .card1 {
-  height: 100%;
-  width: 25%;
+  height: 150%;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 11vw;
+  margin-top: -2vw;
+}
+
+.card2 {
+  height: 8vw;
+  width: 8vw;
+  margin-top: -3.5vw;
+}
+
+.card3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15vw;
+  width: 25vw;
+  margin-top: -6vw;
+}
+
+.card4 {
+  height: 18vw;
+  width: 30vw;
+  margin-top: -2vw;
+}
+
+.card5 {
+  height: 17vw;
+  width: 30vw;
+  margin-top: -3.5vw;
 }
 /*# sourceMappingURL=carouselinfo.css.map */

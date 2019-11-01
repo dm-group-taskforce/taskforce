@@ -8,6 +8,15 @@
   line-height: 1.5;
   border-radius: .3rem;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .daily-task-card, .weekly-task-card, .monthly-task-card, .complete-task-card {
@@ -37,7 +46,6 @@
   color: white;
   background-color: #12c1ed;
   border-color: #12c1ed;
-  margin: 1px;
   cursor: pointer;
 }
 
@@ -51,7 +59,6 @@
   color: white;
   background-color: #23e92d;
   border-color: #23e92d;
-  margin: 1px;
   cursor: pointer;
 }
 
@@ -65,8 +72,8 @@
   color: white;
   background-color: #dc3545;
   border-color: #dc3545;
-  margin: 1px;
   cursor: pointer;
+  margin-bottom: -.5vw;
 }
 
 .pwholething {
@@ -83,54 +90,160 @@
   min-height: 100vh;
 }
 
-.chart-container {
-  width: 40vw;
-  margin-top: 2vh;
-  margin-left: 1vw;
+.allprofile {
+  margin-top: -15vw;
 }
 
-.add-task-btn {
-  background: #72c934;
-  color: white;
-  height: 44px;
-  margin-top: 23px;
-  margin-left: 10px;
-  padding: .5rem 1rem;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  border-radius: .3rem;
-  cursor: pointer;
+.userstuff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 4.5vw;
+  color: #bababa;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.userbox {
+  background: #4b4b4b;
+  border: 5px solid #13e6d8;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.userbox img {
+  margin-left: 2vw;
+}
+
+.userbox h1 {
+  margin-right: 2vw;
+}
+
+.chart-container {
+  height: 60vw;
+  background: transparent;
+  margin-top: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -35vw;
+}
+
+.thechart {
+  height: 60vw;
+  width: 60vw;
 }
 
 .title-rank > h1 {
-  color: white;
+  color: #4b4b4b;
   margin-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.atbutton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bottom2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .task-period-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90vw;
+}
+
+.dheader, .wheader, .mheader, .cheader {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #13e6d8;
+  font-size: 1.5vw;
+  height: 2vw;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .dsection, .wsection, .msection, .csection {
-  background: #ff9800;
   margin-top: 1vw;
   width: 23vw;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   margin-left: 1vw;
-  font-size: 1.5vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .daily-section, .weekly-section, .monthly-section, .completed-section {
   width: 23vw;
-  background: white;
+  background: #bababa;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-right: 1vw;
   height: 350px;
-  background: white;
+  overflow: auto;
   -webkit-box-shadow: 0 10px 6px -6px #777;
           box-shadow: 0 10px 6px -6px #777;
 }
@@ -158,7 +271,7 @@
 }
 
 .weekly-task-card, .monthly-task-card, .complete-task-card {
-  width: 96%;
+  width: 99%;
 }
 
 .delete-task-btn {
