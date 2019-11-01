@@ -8,6 +8,15 @@
   line-height: 1.5;
   border-radius: .3rem;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .daily-task-card {
@@ -37,7 +46,6 @@
   color: white;
   background-color: #12c1ed;
   border-color: #12c1ed;
-  margin: 1px;
   cursor: pointer;
 }
 
@@ -51,7 +59,6 @@
   color: white;
   background-color: #23e92d;
   border-color: #23e92d;
-  margin: 1px;
   cursor: pointer;
 }
 
@@ -65,11 +72,35 @@
   color: white;
   background-color: #dc3545;
   border-color: #dc3545;
-  margin: 1px;
   cursor: pointer;
+  margin-bottom: -.5vw;
+}
+
+.eachtask {
+  font-size: 2vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin-left: .5vw;
+}
+
+.bigtask {
+  border-top: 2px solid black;
 }
 
 .button-container {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.taskbutts {
+  margin-bottom: .5vw;
 }
 /*# sourceMappingURL=Task.css.map */

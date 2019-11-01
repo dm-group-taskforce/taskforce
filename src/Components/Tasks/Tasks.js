@@ -28,25 +28,26 @@ export class Tasks extends Component {
 
             <div className="bigtask">
                 <div className="eachtask">
-                    {/* {this.props.type} */}
-                    {/* {this.props.points} */}
+                <div className="tcontent">
+                     {this.props.content}
+                </div>
                     {this.props.time !== 'completed' ?
 
                         <div className="button-container">
-                            <div className="tcontent">
-
-                            {this.props.content}
-                            </div>
+                            
                             <div className="taskbutts">
                             <Link
                                 to={`/tasks/${this.props.id}`}>
                                 <button
                                     className="edit-task-btn"
-                                >&#9998;</button></Link>
+                                >&#9998;
+                                </button>
+                            </Link>
 
                             <button
                                 className="complete-task-btn"
-                                onClick={this.completeTask}>&#x2713;</button>
+                                onClick={this.completeTask}>&#x2713;
+                            </button>
 
                             <button
                                 className="delete-task-btn"
