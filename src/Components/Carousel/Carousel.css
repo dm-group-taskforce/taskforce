@@ -29,6 +29,7 @@
 
 .cardwords {
   height: 45%;
+  margin-top: -3vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,10 +39,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   font-size: 2vw;
   font-family: 'Varela Round', sans-serif;
-  color: white;
+  color: #bababa;
   font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .bothbutts {
