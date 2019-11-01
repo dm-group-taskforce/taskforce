@@ -157,8 +157,9 @@ class Profile extends Component {
         
         return (
             <main className="pwholething">
-            <div>
+            <div className="">
                 <img src={this.state.img} alt='rank' style={{ width: '100px'}}/>
+                <h1>{this.props.abbreviation} {this.props.last_name}</h1>
                 <div className="title-rank">
                     <h1>To next rank: {toNext}</h1>
                 </div>
@@ -207,10 +208,14 @@ class Profile extends Component {
                     </div>
 
                 </div>
-
-                <div className="chart-container">
-                    <Chart />
-                </div>
+                {this.props.experience !== 0?
+                    <div className="chart-container">
+                        <Chart />
+                    </div>:
+                    null
+            
+                }
+                
                 
             </div>
             </main>
