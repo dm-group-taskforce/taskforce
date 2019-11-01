@@ -1,4 +1,4 @@
-.add-task-btn, .yes-btn, .no-btn {
+.add-task-btn {
   background: #72c934;
   color: white;
   height: 44px;
@@ -67,5 +67,9 @@
   border-color: #dc3545;
   margin: 1px;
   cursor: pointer;
+}
+
+.question {
+  font-size: 1vw;
 }
 /*# sourceMappingURL=TaskConfirmation.css.map */
